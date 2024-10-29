@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Website</title>
+    <title>Wander Space Homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
     
@@ -24,7 +24,7 @@
 		    color: #ecf0f1;
 		}
 
-		h2 {
+		.plans h2 {
 		    color: #333; /* 기본 모드에서의 헤딩 색상 */
 		}
 
@@ -79,11 +79,13 @@
         }
 
         .hero {
-            background: linear-gradient(to right, #2c2c2c, #1a1a1a);
+            background: url('images/home.jpg') no-repeat center center;
+            background-size: cover;
             color: white;
             text-align: center;
-            padding: 150px 20px;
+            padding: 200px 20px 100px;
             animation: fadeIn 1.5s ease-in-out;
+
         }
 
         .button-3d {
@@ -133,7 +135,8 @@
 		}
 
 		body.dark-mode .card h3, 
-		body.dark-mode .card p {
+		body.dark-mode .card p,
+		body.dark-mode .contact h2 {
 		    color: #ecf0f1; /* 다크 모드에서 카드 내 텍스트 색상 */
 		}
 		
@@ -147,13 +150,6 @@
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
         }
 
         @media (max-width: 768px) {
@@ -174,19 +170,10 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Wander Space</div>
-            <ul class="nav-links">
-                <li><a href="#plans">My Page</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button id="themeToggle"><i class="fas fa-adjust"></i></button>
-        </nav>
-    </header>
+    <%@include file="menu.jsp" %>
 
     <section class="hero fade-in">
-        <h1>Welcome to Our Website</h1>
+        <h1>Welcome to Wander Space</h1>
         <p>Discover our services and offerings.</p>
         <button id="learnMoreButton" class="button-3d">Learn More</button>
     </section>
@@ -228,9 +215,7 @@
         </a>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Wander Space</p>
-    </footer>
+    <%@include file="footer.jsp" %>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
