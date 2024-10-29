@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
@@ -120,6 +122,10 @@
             position: relative;
             transition: transform 0.3s;
         }
+        
+        .fi {
+		    font-size: 2em; /* 원하는 크기로 조정 */
+		}
 		
 		body.dark-mode .card {
 		    background-color: #444; /* 다크 모드 배경색 */
@@ -172,7 +178,7 @@
         <nav>
             <div class="logo">Wander Space</div>
             <ul class="nav-links">
-                <li><a href="#plans">Plans</a></li>
+                <li><a href="#plans">My Page</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button id="themeToggle"><i class="fas fa-adjust"></i></button>
@@ -186,28 +192,28 @@
     </section>
 
     <section class="plans" id="plans">
-    <h2 class="fade-in">Our Plans</h2>
+    <h2 class="fade-in">A Popular Destination</h2>
     <div class="plan-cards">
         <div class="card fade-in">
-            <i class="fas fa-star"></i>
-            <h3>Basic Plan</h3>
-            <p>Plano Basico Teste.</p>
+            <span class="fi fi-kr"></span>
+            <h3>Korea</h3>
+            <p>Gyeongbokgung in Seoul, Myeongdong, Hallasan and beaches in Jeju! Don't miss Korean food and Hongdae nightlife!</p>
             <a href="https://www.exemplo.com" target="_blank">
                 <button>More</button>
             </a>
         </div>
         <div class="card fade-in">
-            <i class="fas fa-rocket"></i>
-            <h3>Pro Plan</h3>
-            <p>Plano Pro advenced.</p>
+            <span class="fi fi-cn"></span>
+            <h3>China</h3>
+            <p>Great Wall in Beijing, The Bund in Shanghai, and Zhangjiajie's natural scenery! Don't miss Chinese cuisine!</p>
             <a href="https://www.exemplo.com" target="_blank">
                 <button>More</button>
             </a>
         </div>
         <div class="card fade-in">
-            <i class="fas fa-gem"></i>
-            <h3>Enterprise Plan</h3>
-            <p>Todos os planos juntos etc...</p>
+            <span class="fi fi-jp"></span>
+            <h3>Japen</h3>
+            <p>Shibuya in Tokyo, Gion in Kyoto, and Dotonbori in Osaka! Don't miss Japanese cuisine!</p>
             <a href="https://www.exemplo.com" target="_blank">
                 <button>More</button>
             </a>
@@ -223,7 +229,7 @@
     </section>
 
     <footer>
-        <p>© 2023 Modern Website. All rights reserved.</p>
+        <p>&copy; 2024 Wander Space</p>
     </footer>
 
     <script>

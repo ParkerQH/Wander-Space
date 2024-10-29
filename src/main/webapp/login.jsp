@@ -279,7 +279,7 @@ img {
         <button type="submit" class="login__button">Login</button>
 
         <p class="login__register">
-    		<a href="register.jsp">Register</a> | <a href="#">Home</a>
+    		<a href="register.jsp">Register</a> | <a href="home.jsp">Home</a>
 		</p>
     </form>
 </div>
