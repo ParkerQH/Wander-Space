@@ -53,14 +53,7 @@
        	<h2>Contact Me</h2>
         <p>Feel free to reach out to me via email or connect with me on social media!</p>
         <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
-        <p>LinkedIn: <a href="#">Your LinkedIn Profile</a></p>
         <p>GitHub: <a href="#">Your GitHub Profile</a></p>
-    </section>
-    <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <a href="https://www.exemplo.com" target="_blank">
-            <button class="discord-button button-3d">Join Discord</button>
-        </a>
     </section>
 
     <%@include file="footer.jsp" %>

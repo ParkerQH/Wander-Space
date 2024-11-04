@@ -15,7 +15,7 @@
 			<a href="home.jsp" class="logo">Wander Space</a>
 			<ul class="nav-links">
 				<li><a href="login.jsp">Login</a></li>
-				<li><a href="#mypage">My Page</a></li>
+				<li><a href="mypage.jsp">My Page</a></li>
 			</ul>
 			<button id="themeToggle">
 				<i class="fas fa-adjust"></i>

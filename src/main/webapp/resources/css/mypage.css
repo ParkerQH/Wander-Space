@@ -6,12 +6,42 @@ body {
 	background-color: #f9f9f9;
 }
 
+body.dark-mode {
+    background-color: #2b2b2b;
+    color: #ecf0f1;
+}
+
 header {
 	background: #333;
 	color: white;
 	padding: 20px;
 	text-align: center;
 }
+
+header.dark-mode {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .skills {
+    background-color: #444;
+}
+
+/* 다크 모드일 때 portfolio-item, skill-item 스타일 */
+body.dark-mode .portfolio-item,
+body.dark-mode .skill-item {
+    background-color: #333;
+    border-color: #666;
+}
+
+/* 다크 모드일 때 hover 효과 */
+body.dark-mode .skill-item:hover {
+    background-color: #666;
+}
+
+body.dark-mode .portfolio-item:hover {
+    background-color: #555;
+}
+
 
 .container {
 	width: 90%;
@@ -81,16 +111,6 @@ header {
 	background: #d6d6d6;
 }
 
-footer {
-	background: #333;
-	color: white;
-	text-align: center;
-	padding: 10px;
-	position: relative;
-	bottom: 0;
-	width: 100%;
-}
-
 .about {
     margin: 20px 0; /* 위아래 여백 추가 */
     padding: 20px; /* 내부 여백 추가 */
@@ -110,4 +130,3 @@ footer {
 		width: 100%;
 	}
 }
-

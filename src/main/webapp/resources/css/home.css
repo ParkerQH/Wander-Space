@@ -4,18 +4,18 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #333; /* 기본 텍스트 색상 */
     background-color: #f5f5f5;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-body.dark-mode{
+body.dark-mode {
     background-color: #2b2b2b;
     color: #ecf0f1;
 }
 
-.plans h2 {
-    color: #333;
+body.dark-mode .plans {
+    background-color: #444;
 }
 
 header {
@@ -26,7 +26,7 @@ header {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #00ffcc;
+    border-bottom: 3px solid #00ffcc; /* 헤더의 하단 경계선 색상 */
     transition: border-bottom-color 0.5s ease, background-color 0.5s ease;
 }
 
@@ -73,7 +73,7 @@ nav {
     background-size: cover;
     color: white;
     text-align: center;
-    padding: 200px 20px 100px;
+    padding: 150px 20px 100px;
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -126,7 +126,7 @@ body.dark-mode .card {
 body.dark-mode .card h3, 
 body.dark-mode .card p,
 body.dark-mode .contact h2 {
-    color: #ecf0f1;
+    color: #ecf0f1; /* 다크 모드에서 텍스트 색상 */
 }
 
 .card:hover {

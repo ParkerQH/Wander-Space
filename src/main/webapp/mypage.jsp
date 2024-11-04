@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
     <link rel="stylesheet" href="resources/css/mypage.css">
-
+	<script src="resources/js/mypage.js"></script>
 </head>
 
 <body>
@@ -85,7 +85,7 @@
         </section>
     </div>
 
-    
+    <%@include file="footer.jsp" %>
 </body>
 
 </html>            

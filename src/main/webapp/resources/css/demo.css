@@ -1,113 +1,185 @@
+@charset "UTF-8";
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hue: 223;
+  --bg: hsl(0,0%,100%);
+  --fg: hsl(var(--hue),10%,10%);
+  --trans-dur: 0.3s;
+  --trans-ease-in-out: cubic-bezier(0.65,0,0.35,1);
+  --trans-ease-out: cubic-bezier(0.33,1,0.68,1);
+  font-size: calc(16px + (40 - 16) * (100vw - 280px) / (3840 - 280)); /* 기본 폰트 크기 줄임 */
+}
+
+body,
+button {
+  color: var(--fg);
+  font: 0.9em/1.5 "DM Sans", sans-serif; /* 기본 폰트 크기 줄임 */
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	background-color: #f9f9f9;
+  background-color: var(--bg);
+  display: flex;
+  height: 100vh;
 }
 
-header {
-	background: #333;
-	color: white;
-	padding: 20px;
-	text-align: center;
+main {
+  margin: auto;
+  padding: 0.75em 0;
+  width: min-content;
+  height: 8em; /* 리스트의 전체 높이 조절 */
 }
 
-.container {
-	width: 90%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 20px;
+.drop {
+  --drop-trans-dur: 0.5s;
+  --drop-flare-dist: 0;
+  border-radius: 0.5em;
+  margin: auto;
+  padding: 0.25em;
+  position: relative;
+  min-width: 5em; /* 너비를 더 줄임 */
 }
 
-.portfolio, .skills, .about, .contact {
-	margin: 40px 0;
+.drop, .drop:after {
+  background-color: hsl(var(--hue), 10%, 90%);
+  transition: background-color var(--trans-dur);
+}
+.drop:before, .drop:after {
+  content: "";
+  position: absolute;
+}
+.drop:before {
+  background-image: radial-gradient(100% 100% at 100% 50%, hsla(var(--hue), 90%, 50%, 0.5), hsla(var(--hue), 90%, 50%, 0) 50%);
+  display: none;
+  right: 0;
+  bottom: 100%;
+  width: 9em;
+  height: 9em;
+}
+.drop:after {
+  border-radius: 0.4375em;
+  display: block;
+  top: 0.125em;
+  left: 0.125em;
+  width: calc(100% - 0.25em);
+  height: calc(100% - 0.25em);
+}
+.drop__btn {
+  background-color: white;
+  border-radius: 0.375em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  height: 1.5em; /* 버튼 높이 더 줄임 */
+  outline: transparent;
+  margin-bottom: 0.25em;
+  padding: 0.3em; /* 패딩 더 줄임 */
+  position: relative;
+  width: 100%;
+  transition: background-color var(--trans-dur), box-shadow calc(var(--trans-dur) / 2) var(--trans-ease-in-out), color var(--drop-trans-dur);
+  z-index: 1;
+  font-size: 0.8em; /* 버튼 글자 크기 줄임 */
 }
 
-.portfolio {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+.drop__btn:hover, .drop__btn:focus-visible, .drop__btn[aria-expanded=true] {
+  background-color: hsl(var(--hue), 10%, 95%);
+}
+.drop__btn:focus-visible {
+  box-shadow: 0 0 0 0.25em hsla(var(--hue), 90%, 50%, 1);
+}
+.drop__btn:after {
+  border-top: 0.375em solid currentColor;
+  border-right: 0.375em solid transparent;
+  border-left: 0.375em solid transparent;
+  content: "";
+  display: block;
+  margin-inline-start: auto;
+  width: 0;
+  height: 0;
+  transform-origin: 50% 37.5%;
+  transition: transform var(--drop-trans-dur) var(--trans-ease-out);
+}
+.drop__btn[aria-expanded=true]:after {
+  transform: rotate(0.5turn);
+}
+.drop--collapsing, .drop--expanding, .drop__items {
+  overflow: hidden;
+}
+.drop__items {
+  height: 0;
+}
+.drop__items-inner {
+  visibility: hidden;
+}
+.drop--collapsing .drop__btn[aria-expanded=true] {
+  background-color: white;
+}
+.drop--collapsing .drop__btn[aria-expanded=true]:after {
+  transform: rotate(0);
+}
+.drop--expanding:before {
+  display: block;
+}
+.drop__items .drop__btn:hover, .drop__items .drop__btn:focus-visible {
+  background-color: hsl(var(--hue), 10%, 97.5%);
+  color: hsla(var(--hue), 90%, 50%);
+}
+.drop__items .drop__btn:focus-visible {
+  box-shadow: 0 0 0 0.25em hsla(var(--hue), 90%, 50%, 0);
+}
+.drop__items .drop__btn:after {
+  border: 0;
+  content: "✓";
+  display: none;
+  width: auto;
+  height: auto;
+}
+.drop__items .drop__btn--selected:after {
+  display: block;
+}
+.drop__btn[aria-expanded=true] ~ .drop__items {
+  height: auto;
+}
+.drop__btn[aria-expanded=true] ~ .drop__items .drop__items-inner {
+  visibility: visible;
+}
+.drop:has([aria-expanded=true]) {
+  height: auto;
+}
+.drop:has([aria-expanded=true]):before {
+  transform: translateY(calc(9em + var(--drop-flare-dist)));
+  transition: transform var(--drop-trans-dur) linear;
 }
 
-.portfolio-item {
-	background: #fff;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	margin: 10px;
-	padding: 15px;
-	width: calc(30% - 40px);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	transition: transform 0.2s;
-}
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue),10%,10%);
+    --fg: hsl(var(--hue),10%,90%);
+  }
 
-.portfolio-item:hover {
-	transform: scale(1.05);
-}
-
-.portfolio-item img {
-	max-width: 100%;
-	border-radius: 5px;
-}
-
-.skills {
-	background: #ececec;
-	padding: 20px;
-	border-radius: 5px;
-}
-
-.skills h2, .about h2, .contact h2 {
-	text-align: center;
-}
-
-.skills-list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-.skill-item {
-	background: #fff;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	margin: 10px;
-	padding: 10px 20px;
-	width: calc(20% - 40px);
-	text-align: center;
-	transition: background 0.3s;
-}
-
-.skill-item:hover {
-	background: #d6d6d6;
-}
-
-footer {
-	background: #333;
-	color: white;
-	text-align: center;
-	padding: 10px;
-	position: relative;
-	bottom: 0;
-	width: 100%;
-}
-
-.about {
-    margin: 20px 0; /* 위아래 여백 추가 */
-    padding: 20px; /* 내부 여백 추가 */
-}
-
-@media ( max-width : 768px) {
-	.portfolio-item {
-		width: calc(45% - 40px);
-	}
-	.skill-item {
-		width: calc(45% - 40px);
-	}
-}
-
-@media ( max-width : 480px) {
-	.portfolio-item, .skill-item {
-		width: 100%;
-	}
-}
-
+  .drop, .drop:after {
+    background-color: black;
+  }
+  .drop__btn {
+    background-color: hsl(var(--hue), 10%, 10%);
+  }
+  .drop__btn:hover, .drop__btn:focus-visible, .drop__btn[aria-expanded=true] {
+    background-color: hsl(var(--hue), 10%, 20%);
+  }
+  .drop__items .drop__btn:hover, .drop__items .drop__btn:focus-visible {
+    background-color: hsl(var(--hue), 10%, 15%);
+    color: hsla(var(--hue), 90%, 70%);
+  }
+  .drop--collapsing .drop__btn[aria-expanded=true] {
+    background-color: hsl(var(--hue), 10%, 10%);
+  }
+}                                         
+            
