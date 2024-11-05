@@ -114,6 +114,7 @@ body.dark-mode .portfolio-item:hover {
 .about {
     margin: 20px 0; /* 위아래 여백 추가 */
     padding: 20px; /* 내부 여백 추가 */
+    text-align: center;
 }
 
 @media ( max-width : 768px) {

@@ -24,12 +24,9 @@
         <section class="skills">
             <h2>Country</h2>
             <div class="skills-list">
-                <div class="skill-item">HTML</div>
-                <div class="skill-item">CSS</div>
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">React</div>
-                <div class="skill-item">Node.js</div>
-                <div class="skill-item">Python</div>
+                <div class="skill-item">Korea</div>
+                <div class="skill-item">China</div>
+                <div class="skill-item">Japan</div>
             </div>
         </section>
 
@@ -40,37 +37,37 @@
                 <img src="resources/images/1.jpg" alt="Project 1">
                 <h3>Project 1</h3>
                 <p>Description of project 1. This project involves...</p>
-                <a href="#">View Project</a>
+                <a href="#">More</a>
             </div>
             <div class="portfolio-item">
                 <img src="resources/images/1.jpg" alt="Project 2">
                 <h3>Project 2</h3>
                 <p>Description of project 2. This project involves...</p>
-                <a href="#">View Project</a>
+                <a href="#">More</a>
             </div>
             <div class="portfolio-item">
                 <img src="resources/images/1.jpg" alt="Project 3">
                 <h3>Project 3</h3>
                 <p>Description of project 3. This project involves...</p>
-                <a href="#">View Project</a>
+                <a href="#">More</a>
             </div>
             <div class="portfolio-item">
                 <img src="resources/images/1.jpg" alt="Project 3">
                 <h3>Project 3</h3>
                 <p>Description of project 3. This project involves...</p>
-                <a href="#">View Project</a>
+                <a href="#">More</a>
             </div>
             <div class="portfolio-item">
                 <img src="resources/images/1.jpg" alt="Project 3">
                 <h3>Project 3</h3>
                 <p>Description of project 3. This project involves...</p>
-                <a href="#">View Project</a>
+                <a href="#">More</a>
             </div>
             <div class="portfolio-item">
                 <img src="project3.jpg" alt="Project 3">
                 <h3>Project 3</h3>
                 <p>Description of project 3. This project involves...</p>
-                <a href="#">View Project</a>
+                <a href="#">More</a>
             </div>
             <!-- Add more portfolio items as needed -->
         </section>

@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #f9f9f9;
+}
+
+body.dark-mode {
+    background-color: #2b2b2b;
+    color: #ecf0f1;
+}
+
+body.dark-mode .mytrip {
+    background-color: #444;
+}
+
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.mytrip, .about {
+	margin: 40px 0;
+}
+
+.mytrip {
+	background: #ececec;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.mytrip h2, .about h2 {
+	text-align: center;
+}
+
+/* Form 그룹 정렬 및 너비 조정 */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 500px;
+    margin: 10px auto; /* 중앙 정렬을 위한 여백 */
+}
+
+/* Label과 입력 요소 간격 조정 */
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.mytrip select,
+.mytrip input[type="text"],
+.mytrip textarea,
+.mytrip input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
+}
+
+.mytrip select {
+    appearance: none; /* 브라우저 기본 스타일 제거 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.about {
+    margin: 20px 0; /* 위아래 여백 추가 */
+    padding: 20px; /* 내부 여백 추가 */
+    text-align: center;
+}
+
+@media ( max-width : 768px) {
+	.portfolio-item {
+		width: calc(45% - 40px);
+	}
+	.skill-item {
+		width: calc(45% - 40px);
+	}
+}
+
+@media ( max-width : 480px) {
+	.portfolio-item, .skill-item {
+		width: 100%;
+	}
+}

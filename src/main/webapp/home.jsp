@@ -51,9 +51,8 @@
 
 	<section class="contact">
        	<h2>Contact Me</h2>
-        <p>Feel free to reach out to me via email or connect with me on social media!</p>
-        <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
-        <p>GitHub: <a href="#">Your GitHub Profile</a></p>
+        <p>Email: <a href="mailto:blueskyaoa7@gmail.com">blueskyaoa7@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/ParkerQH">GitHub ParkerQH</a></p>
     </section>
 
     <%@include file="footer.jsp" %>
