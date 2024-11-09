@@ -13,8 +13,11 @@ public class MemberRepository {
 	}
 	
 	private MemberRepository() {
-		Member admin = new Member("박창률", "admin@admin.com", "010-1234-5678", "parker", "admin12!");
-		listOfMembers.add(admin);
+		Member admin1 = new Member("박창률", "admin1@admin.com", "010-1234-5678", "parker", "admin12!");
+		Member admin2 = new Member("박창률", "admin2@admin.com", "010-1234-5678", "parker", "admin12!");
+		
+		listOfMembers.add(admin1);
+		listOfMembers.add(admin2);
 	}
 	
 	public ArrayList<Member> getAllMembers() {

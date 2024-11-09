@@ -7,9 +7,10 @@ public class Trip implements Serializable{
 	private String email;
 	private String id;
 	private String country;
-	private String place;
+	private String region;
 	private String title;
 	private String content;
+	private String mainpicture;
 	private String[] pictures;
 	private String like;
 	public Trip() {
@@ -34,11 +35,11 @@ public class Trip implements Serializable{
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public String getPlace() {
-		return place;
+	public String getRegion() {
+		return region;
 	}
-	public void setPlace(String place) {
-		this.place = place;
+	public void setRegion(String region) {
+		this.region = region;
 	}
 	public String getTitle() {
 		return title;
@@ -51,6 +52,12 @@ public class Trip implements Serializable{
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public String getMainPicture() {
+		return mainpicture;
+	}
+	public void setMainPicture(String mainpicture) {
+		this.mainpicture = mainpicture;
 	}
 	public String[] getPictures() {
 		return pictures;

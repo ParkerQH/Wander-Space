@@ -43,3 +43,9 @@ function updateRegions() {
         });
     }
 }
+
+if (content.value.length <100){
+		alert("[내용]\n최소 20자 이상 입력하세요");
+		description.focus();
+		return false;
+	}

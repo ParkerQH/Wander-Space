@@ -1,0 +1,265 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #333; /* 기본 텍스트 색상 */
+	background-color: #f5f5f5;
+	transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+	background-color: #2b2b2b;
+	color: #ecf0f1;
+}
+
+body.dark-mode .plans {
+	background-color: #444;
+}
+
+header {
+	background-color: #2c2c2c;
+	padding: 20px 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-bottom: 3px solid #00ffcc; /* 헤더의 하단 경계선 색상 */
+	transition: border-bottom-color 0.5s ease, background-color 0.5s ease;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.logo {
+	font-size: 28px;
+	font-weight: bold;
+	color: white;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	gap: 30px;
+}
+
+.nav-links li a {
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+	transition: color 0.3s, transform 0.3s;
+}
+
+#themeToggle {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 24px;
+	cursor: pointer;
+	transition: color 0.3s;
+}
+
+.hero {
+	background-size: cover;
+	color: white;
+	text-align: center;
+	padding: 150px 20px 100px;
+	animation: fadeIn 1.5s ease-in-out;
+}
+
+.plans {
+	padding: 80px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #f0f0f0;
+	transition: background-color 0.5s ease;
+}
+
+.plan-cards {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.card {
+	background-color: #ecf0f1;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	width: 300px;
+	position: relative;
+	transition: transform 0.3s;
+}
+
+.fi {
+	font-size: 2em;
+}
+
+body.dark-mode .card {
+	background-color: #444;
+	color: #ecf0f1;
+}
+
+body.dark-mode .card h3, body.dark-mode .card p, body.dark-mode .contact h2
+	{
+	color: #ecf0f1; /* 다크 모드에서 텍스트 색상 */
+}
+
+.card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.contact {
+	padding: 60px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+@media ( max-width : 768px) {
+	.nav-links {
+		flex-direction: column;
+		gap: 15px;
+	}
+	.plan-cards {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.fade-in {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+section.card {
+	background: #8b8b8b; /* 기존의 회색 */
+	background: -webkit-linear-gradient(to right, #888888, #333333);
+	background: linear-gradient(to right, #888888, #333333);
+	border-radius: 24px 24px 24px 48px;
+	padding: 48px 48px 48px 308px;
+	margin: 84px auto;
+	min-width: 640px;
+	display: flex;
+	flex-direction: row;
+	align-self: flex-start;
+	position: relative;
+	box-shadow: 5px 0 0 0 rgba(204, 204, 204, 0.3), -5px 0 0 0
+		rgba(204, 204, 204, 0.3), 0 5px 0 0 rgba(204, 204, 204, 0.3);
+}
+
+section.card .text-content {
+	display: flex;
+	flex-direction: column;
+	width: calc(60vw - 192px);
+}
+
+section.card .text-content h3 {
+	margin: 0;
+	font-size: 1.5em;
+	max-width: 20ch;
+	color: #fff;
+}
+
+section.card .text-content p {
+	margin: 25px 0 24px;
+	color: #fff;
+}
+
+section.card .text-content a {
+	border: 3px solid #f2f2f2;
+	color: #ffffff;
+	align-self: flex-start;
+	text-decoration: none;
+	padding: 16px 32px;
+	border-radius: 12px;
+	transition: 400ms all;
+}
+
+section.card .text-content a:hover {
+	background: #051c5e;
+	color: white;
+}
+
+section.card .visual {
+	width: 240px;
+	height: 100%;
+	position: absolute;
+	top: -24px;
+	left: 24px;
+	overflow: hidden;
+	border-radius: 24px;
+}
+
+section.card .visual img {
+	height: 110%; /* 이미지를 컨테이너에 맞게 크기 조정 */
+	width: 100%;
+	object-fit: cover;
+}
+
+article {
+	margin: auto;
+	display: block;
+	width: calc(60vw + 248px);
+	max-width: calc(920px + 248px);
+	min-width: calc(640px + 248px);
+}
+
+@media all and (max-width: 1100px) {
+	body {
+		padding: 96px 48px 24px;
+	}
+	article {
+		width: 100%;
+		min-width: 100%;
+	}
+	section.card {
+		min-width: 100%;
+	}
+	section.card .text-content {
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 720px) {
+	body {
+		padding: 48px 24px 0;
+	}
+	section.card {
+		margin: 64px 0;
+		padding: 88px 36px 36px;
+		flex-direction: column;
+		border-radius: 24px;
+	}
+	section.card .text-content h3 {
+		max-width: calc(100% - 150px);
+		font-size: 1em;
+	}
+	section.card .text-content p, section.card .text-content a {
+		font-size: 0.8em;
+	}
+	section.card .visual {
+		width: 150px;
+		height: 150px;
+		right: 16px;
+		left: auto;
+		border-radius: 50%;
+	}
+	section.card .visual img {
+		width: 100%;
+		height: auto;
+	}
+}

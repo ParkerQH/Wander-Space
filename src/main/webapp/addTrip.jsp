@@ -24,7 +24,7 @@
 		<!-- Skills Section -->
 		<section class="mytrip">
 			<h2>My Trip</h2>
-			<form action="#" method="post">
+			<form action="#" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="country">Country:</label> 
 					<select  id="country" name="country" onchange="updateRegions()">
@@ -47,14 +47,12 @@
 					<textarea name="content" id="content" rows="10"></textarea>
 				</div>
 				<div class="form-group">
-					<label>Main Image:</label> <input type="file" name="mainFileName">
+					<label>Main Image:</label> <input type="file" name="mainpicture">
 				</div>
 				<div class="form-group">
-					<label>Image 1:</label> <input type="file" name="filename1">
-				</div>
-				<div class="form-group">
-					<label>Image 2:</label> <input type="file" name="filename2">
-				</div>
+                    <label>Additional Images:</label>
+                    <input type="file" name="pictures" multiple>
+                </div>
 			</form>
 
 		</section>

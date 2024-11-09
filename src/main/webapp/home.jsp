@@ -16,7 +16,6 @@
     <section class="hero fade-in">
         <h1>Welcome to Wander Space</h1>
         <p>Discover our services and offerings.</p>
-        <button id="learnMoreButton" class="button-3d">Learn More</button>
     </section>
 
     <section class="plans" id="plans">
@@ -26,7 +25,7 @@
             <span class="fi fi-kr"></span>
             <h3>Korea</h3>
             <p>Gyeongbokgung in Seoul, Myeongdong, Hallasan and beaches in Jeju! Don't miss Korean food and Hongdae nightlife!</p>
-            <a href="https://www.exemplo.com" target="_blank">
+            <a href="allTrip.jsp?country=Korea">
                 <button>More</button>
             </a>
         </div>
@@ -34,7 +33,7 @@
             <span class="fi fi-cn"></span>
             <h3>China</h3>
             <p>Great Wall in Beijing, The Bund in Shanghai, and Zhangjiajie's natural scenery! Don't miss Chinese cuisine!</p>
-            <a href="https://www.exemplo.com" target="_blank">
+            <a href="allTrip.jsp?country=China">
                 <button>More</button>
             </a>
         </div>
@@ -42,7 +41,7 @@
             <span class="fi fi-jp"></span>
             <h3>Japan</h3>
             <p>Shibuya in Tokyo, Gion in Kyoto, and Dotonbori in Osaka! Don't miss Japanese cuisine!</p>
-            <a href="https://www.exemplo.com" target="_blank">
+            <a href="allTrip.jsp?country=Japan">
                 <button>More</button>
             </a>
         </div>

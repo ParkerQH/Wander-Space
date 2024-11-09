@@ -29,8 +29,8 @@
                 <div class="skill-item">Japan</div>
             </div>
         </section>
-
-		<h2>My Work</h2>
+		
+		<h2>My Trip</h2> <a href="addTrip.jsp">+Add Trip</a>
         <!-- Portfolio Section -->
         <section class="portfolio">
             <div class="portfolio-item">
