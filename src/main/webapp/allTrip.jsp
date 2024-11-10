@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.util.ArrayList, com.wander.dto.Trip, com.wander.dao.TripRepository"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
+import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepository, com.wander.dto.Trip, com.wander.dao.TripRepository" %>
+<jsp:useBean id="countryDAO" class="com.wander.dao.CountryRepository" scope="session" />
 <jsp:useBean id="tripDAO" class="com.wander.dao.TripRepository" scope="session" />
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,35 +12,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" />
     <link rel="stylesheet" href="resources/css/allTrip.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
 	<script src="resources/js/allTrip.js"></script>
 </head>
 <body>
     <%@include file="menu.jsp" %>
 
 	<% 
-	String country = request.getParameter("country");
+	String countryname = request.getParameter("country");
+	Country country = countryDAO.getCountryByName(countryname);
 	//String backgroundImage = (country != null && !country.isEmpty()) ? country.toLowerCase() + ".jpg" : "homepage.jpg";
 	%>
-	%>
     <section class="hero fade-in" style="background-image: url('resources/images/homepage.jpg<%--= backgroundImage --%>');">
-        <h1>Welcome to <%= country %></h1>
+        <h1>Welcome to <%= countryname %></h1>
     </section>
 
     <section class="plans" id="plans" style="display: flex;">
     	<%--@include file="demo.jsp" --%>
-    	<%@ include file="weather.jsp"%>
+    		<jsp:include page="weather.jsp">
+        		<jsp:param name="country" value="<%= countryname %>" />
+    		</jsp:include>
+   		<div class="card fade-in">
+    		<h1><%= countryname %></h1>
+    		<h2>- <%= country.getCapital() %></h2>
+            <span class="fi fi-<%= country.getCountryId() %>"></span>
+            <p><%= country != null ? country.getIntro() : "Explore this beautiful country!" %></p>
+        </div>
 	</section>
 	
 	<%
 	TripRepository dao = TripRepository.getInstance();
 	ArrayList<Trip> listOfTrips = dao.getAllTrips();
-	System.out.println("도서 목록의 크기: " + listOfTrips.size());
+	System.out.println("저장된 글 수: " + listOfTrips.size());
 	
 	
 	for (int i = 0; i < listOfTrips.size(); i++) {
 		Trip trip = listOfTrips.get(i);
-		 if (trip.getCountry().equalsIgnoreCase(country)) { //국가가 일치하는 경우만 출력
+		 if (trip.getCountry().equalsIgnoreCase(countryname)) { //국가가 일치하는 경우만 출력
 	%>
 	<section class="card">
     <div class="text-content">

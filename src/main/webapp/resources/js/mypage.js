@@ -17,3 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function filterTrips(country) {
+    const items = document.querySelectorAll('.portfolio-item');
+    items.forEach(item => {
+        if (country === 'All' || item.getAttribute('data-country') === country) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}

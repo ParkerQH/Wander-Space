@@ -22,19 +22,19 @@ header.dark-mode {
     background-color: #1f1f1f;
 }
 
-body.dark-mode .skills {
+body.dark-mode .countrys {
     background-color: #444;
 }
 
 /* 다크 모드일 때 portfolio-item, skill-item 스타일 */
 body.dark-mode .portfolio-item,
-body.dark-mode .skill-item {
+body.dark-mode .country {
     background-color: #333;
     border-color: #666;
 }
 
 /* 다크 모드일 때 hover 효과 */
-body.dark-mode .skill-item:hover {
+body.dark-mode .country:hover {
     background-color: #666;
 }
 
@@ -50,7 +50,7 @@ body.dark-mode .portfolio-item:hover {
 	padding: 20px;
 }
 
-.portfolio, .skills, .about, .contact {
+.portfolio, .countrys, .about, .contact {
 	margin: 40px 0;
 }
 
@@ -80,23 +80,23 @@ body.dark-mode .portfolio-item:hover {
 	border-radius: 5px;
 }
 
-.skills {
+.countrys {
 	background: #ececec;
 	padding: 20px;
 	border-radius: 5px;
 }
 
-.skills h2, .about h2, .contact h2 {
+.countrys h2, .about h2, .contact h2 {
 	text-align: center;
 }
 
-.skills-list {
+.countrys-list {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
-.skill-item {
+.country {
 	background: #fff;
 	border: 1px solid #ddd;
 	border-radius: 5px;
@@ -107,7 +107,7 @@ body.dark-mode .portfolio-item:hover {
 	transition: background 0.3s;
 }
 
-.skill-item:hover {
+.country:hover {
 	background: #d6d6d6;
 }
 
@@ -121,13 +121,13 @@ body.dark-mode .portfolio-item:hover {
 	.portfolio-item {
 		width: calc(45% - 40px);
 	}
-	.skill-item {
+	.country {
 		width: calc(45% - 40px);
 	}
 }
 
 @media ( max-width : 480px) {
-	.portfolio-item, .skill-item {
+	.portfolio-item, .country {
 		width: 100%;
 	}
 }

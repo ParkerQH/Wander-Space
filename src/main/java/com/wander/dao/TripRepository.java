@@ -29,8 +29,8 @@ public class TripRepository {
 		Trip trip2 = new Trip();
 		trip2.setEmail("admin1@admin.com");
 		trip2.setId("admin1@admin.com-2");
-		trip2.setCountry("China");
-		trip2.setRegion("Chongqing");
+		trip2.setCountry("Korea");
+		trip2.setRegion("Busan");
 		trip2.setTitle("아름다운 충칭의 야경을 사진에 담다.");
 		trip2.setContent("최근 sns에서 화제가 되고 있는 홍야동에 다녀왔습니다."
 				+ "야경이 정말 이쁜 장소였던 것 같아요. 중국 충칭여행을 알아보고 있으시다면 꼭 가보는 걸 추천드립니다!!");

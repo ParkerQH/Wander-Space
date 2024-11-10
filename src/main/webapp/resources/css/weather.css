@@ -9,12 +9,18 @@ main{
     background-color: #f7f7f7;
     border-radius: 30px;
     box-shadow: 0 30px 50px #5553;
-    padding: 30px;
+    padding: 25px;
     box-sizing: border-box;
 }
+
+main.dark-mode {
+	background-color: #8b8b8b;
+}
+
 main .result{
     padding-top: 20px;
     text-align: center;
+    color: #000000;
 }
 main .result .name{
     font-weight: bold;
@@ -83,6 +89,4 @@ main.error{
     100%{
         transform: translate(0, 0); 
     }
-}                                           
-                                         
-            
+}                                                                            

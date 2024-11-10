@@ -1,52 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="resources/css/demo.css">
-    <title>Flex Card Css</title>
+    <title>Andev Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="resources/css/demo.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <input type="radio" name="slide" id="c1" checked>
-            <label for="c1" class="card">
-                <div class="row">
-                    <div class="icon">1</div>
-                    <div class="description">
-                        <h4>Winter</h4>
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c2" >
-            <label for="c2" class="card">
-                <div class="row">
-                    <div class="icon">2</div>
-                    <div class="description">
-                        <h4>Digital Technology</h4>   
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c3" >
-            <label for="c3" class="card">
-                <div class="row">
-                    <div class="icon">3</div>
-                    <div class="description">
-                        <h4>Globalization</h4>
-                    </div>
-                </div>
-            </label>
-            <input type="radio" name="slide" id="c4" >
-            <label for="c4" class="card">
-                <div class="row">
-                    <div class="icon">4</div>
-                    <div class="description">
-                        <h4 style="color: black;">New Technology</h4>
-                    </div>
-                </div>
-            </label>
-        </div>
-    </div>
+    <main>
+        <form>
+            <input type="text" id="name" autocomplete="off">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+        <section class="result">
+
+            <figure class="name">
+                <figcaption>Lo1ndon</figcaption> 
+                <img src="https://flagsapi.com/GB/shiny/32.png">
+            </figure>
+
+            <figure class="temperature">
+                <img src="https://openweathermap.org/img/wn/10d@4x.png">
+                <figcaption>
+                    <span>31</span>
+                    <sup>o</sup>
+                </figcaption> 
+            </figure>
+            <p class="description">overcast clouds</p>
+            <ul>
+                <li>
+                    <span>clouds</span>
+                    <i class="fa-solid fa-cloud"></i>
+                    <span id="clouds">98</span>%
+                </li>
+                <li>
+                    <span>humidity</span>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span id="humidity">98</span>%
+                </li>
+                <li>
+                    <span>pressure</span>
+                    <i class="fa-solid fa-gauge"></i>
+                    <span id="pressure">1011</span>hPa
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="resources/js/demo.js"></script>
 </body>
 </html>
             

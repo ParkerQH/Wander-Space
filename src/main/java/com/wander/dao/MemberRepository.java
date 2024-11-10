@@ -1,7 +1,6 @@
 package com.wander.dao;
 
 import java.util.ArrayList;
-
 import com.wander.dto.Member;
 
 public class MemberRepository {

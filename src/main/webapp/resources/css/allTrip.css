@@ -84,6 +84,11 @@ nav {
 	text-align: center;
 	background-color: #f0f0f0;
 	transition: background-color 0.5s ease;
+	display: flex;
+	justify-content: center;  /* 수평 가운데 정렬 */
+    align-items: center;      /* 수직 가운데 정렬 */
+    gap: 70px;                /* 카드와 날씨 요소 사이에 간격 */
+    flex-wrap: wrap;
 }
 
 .plan-cards {
@@ -94,14 +99,32 @@ nav {
 }
 
 .card {
-	background-color: #ecf0f1;
-	padding: 30px;
-	border-radius: 10px;
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-	width: 300px;
-	position: relative;
-	transition: transform 0.3s;
+    background-color: #ecf0f1;
+    padding: 40px; /* padding을 늘려서 카드 크기 증가 */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 450px; /* 카드의 너비를 좀 더 넓게 설정 */
+    position: relative;
+    transition: transform 0.3s;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
 }
+
+.card h1 {
+    font-size: 4em; /* 크기 키우기 */
+    margin-bottom: 10px;
+    text-align: left; /* 제목 왼쪽 정렬 */
+}
+
+.card span {
+    display: block; /* 플래그 아이콘이 제대로 표시되도록 설정 */
+    font-size: 7em; /* 플래그 아이콘 크기 */
+    margin-bottom: 10px;
+}
+
+.card p {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
 
 .fi {
 	font-size: 2em;
@@ -144,6 +167,7 @@ body.dark-mode .card h3, body.dark-mode .card p, body.dark-mode .contact h2
 	opacity: 0;
 	transition: opacity 1s ease-in-out;
 }
+
 
 section.card {
 	background: #8b8b8b; /* 기존의 회색 */

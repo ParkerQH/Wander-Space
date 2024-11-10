@@ -46,6 +46,9 @@
             </a>
         </div>
     </div>
+    <a href="allCountry.jsp">
+            <button class="discord-button button-3d">More</button>
+    </a>
 	</section>
 
 	<section class="contact">
