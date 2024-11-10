@@ -67,7 +67,7 @@ const capitals = {
 };
 
 
-let defaultCity = capitals[country] || "Seoul";  // 국가의 수도를 찾고, 없을 경우 기본값으로 'Seoul' 사용
+let defaultCity = capitals[country] || country;  // 국가의 수도를 찾고, 없을 경우 기본값으로 'Seoul' 사용
 
 let city = document.querySelector('.name');
 let temperature = document.querySelector('.temperature');

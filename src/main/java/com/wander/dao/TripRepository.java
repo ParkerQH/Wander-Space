@@ -89,4 +89,13 @@ public class TripRepository {
         // 리스트에 트립 추가
         listOfTrips.add(trip);
     }
+    
+    public Trip getTripById(String tripId) {
+        for (Trip trip : listOfTrips) {
+            if (trip.getId().equals(tripId)) {
+                return trip;
+            }
+        }
+        return null;  // 해당 id의 Trip이 없으면 null 반환
+    }
 }

@@ -53,7 +53,7 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
     <div class="text-content">
         <h3><%=trip.getTitle() %></h3>
         <p><%=trip.getContent() %></p>  
-        <a href="viewTrip.jsp">More</a>
+        <a href="viewTrip.jsp?id=<%=trip.getId()%>">More</a>
     </div>
     <div class="visual">
         <img src="resources/images/<%=trip.getMainPicture() %>" alt="" />

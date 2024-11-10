@@ -60,7 +60,7 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 					alt="<%=trip.getTitle()%>">
 				<h3><%=trip.getTitle()%></h3>
 				<p><%=trip.getContent()%></p>
-				<a href="#">More</a>
+				<a href="viewTrip.jsp?id=<%=trip.getId()%>">More</a>
 			</div>
 			<%
 			}
