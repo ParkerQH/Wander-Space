@@ -76,8 +76,17 @@ body.dark-mode .portfolio-item:hover {
 }
 
 .portfolio-item img {
-	max-width: 100%;
-	border-radius: 5px;
+    width: 100%;       /* 부모 요소 너비에 맞추기 */
+    height: 200px;      /* 부모 요소 높이에 맞추기 */
+    object-fit: cover; /* 비율을 유지하면서 영역을 꽉 채우기 */
+    border-radius: 5px;
+}
+
+.portfolio-item p {
+    white-space: nowrap;        /* 줄바꿈 방지 */
+    overflow: hidden;           /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis;    /* '...'으로 표시 */
+    width: 300px;               /* 고정된 너비 설정 */
 }
 
 .countrys {

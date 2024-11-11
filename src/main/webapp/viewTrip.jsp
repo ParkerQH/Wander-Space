@@ -19,7 +19,8 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 
 	<%
 		String tripId = request.getParameter("id");
-		Trip trip = tripDAO.getTripById(tripId);
+		TripRepository tripdao = TripRepository.getInstance();
+		Trip trip = tripdao.getTripById(tripId);
 		Country country = countryDAO.getCountryByName(trip.getCountry());
 		//String backgroundImage = (country != null && !country.isEmpty()) ? country.toLowerCase() + ".jpg" : "homepage.jpg";
 	%>
@@ -48,35 +49,41 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 	%>
 	
 	<section class="plans" id="plans">
-   		<div class="card-alt fade-in">
-    		<h2><%= trip.getTitle() %></h2>
-            <%-- 사진 슬라이드 부분 --%>
-        <%
-            if (pictures != null && pictures.length > 0) {
-        %>
-            <div class="photo-slider">
-                <div class="slider-container">
-                    <% for (String picture : pictures) { %>
-                        <div class="slide">
-                            <img src="resources/images/<%=trip.getPictures() %>" alt="Trip Picture">
-                        </div>
-                    <% } %>
-                </div>
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    <div class="card-alt fade-in">
+        <h2><%= trip.getTitle() %></h2>
+        <br>
+        <div class="photo-slider">
+            <div class="slider-container">
+                <% 
+                    // mainPicture가 있는 경우 첫 번째 슬라이드로 추가
+                    if (mainPicture != null && !mainPicture.isEmpty()) { 
+                %>
+                    <div class="slide">
+                        <img src="resources/images/TravelReview/<%= mainPicture %>" alt="Main Trip Picture">
+                    </div>
+                <% 
+                    } 
+                    
+                    // pictures 배열의 이미지들을 슬라이드에 추가
+                    if (pictures != null && pictures.length > 0) { 
+                        for (String picture : pictures) { 
+                %>
+                    <div class="slide">
+                        <img src="resources/images/TravelReview/<%= picture %>" alt="Trip Picture">
+                    </div>
+                <% 
+                        } 
+                    } 
+                %>
             </div>
-        <% 
-            } else if (mainPicture != null && !mainPicture.isEmpty()) {
-        %>
-            <div class="main-picture">
-                <img src="resources/images/<%=trip.getMainPicture() %>" alt="Main Trip Picture">
-            </div>
-        <% 
-            }
-        %>
-            <p><%= country != null ? country.getIntro() : "Explore this beautiful country!" %></p>
+            <button class="slider-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-button next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-	</section>
+        <br><br>
+        <p><%= trip.getContent() != null ? trip.getContent() : "" %></p>
+    </div>
+</section>
+
 	
     <%@include file="footer.jsp" %>
 </body>

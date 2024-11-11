@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
+import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepository, com.wander.dto.Trip, com.wander.dao.TripRepository" %>
+<jsp:useBean id="countryDAO" class="com.wander.dao.CountryRepository" scope="session" />
+<jsp:useBean id="tripDAO" class="com.wander.dao.TripRepository" scope="session" />
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +13,26 @@
 </head>
 <body>
     <main>
+    <%
+		String tripId = request.getParameter("id");
+    	System.out.println("Generated ID for new trip: " + tripId);
+    	Trip trip1 = tripDAO.getTripById(tripId);
+	%>
+	<%
+	TripRepository dao = TripRepository.getInstance();
+	ArrayList<Trip> listOfTrips = dao.getAllTrips();
+	System.out.println("저장된 글 수: " + listOfTrips.size());
+	
+	
+	for (int i = 0; i < listOfTrips.size(); i++) {
+		Trip trip = listOfTrips.get(i);
+		if (trip.getId().equalsIgnoreCase(tripId)){
+			System.out.println("저장된 글 수: " + trip.getId());
+			System.out.println("저장된 글 수: " + trip1.getId());
+		}
+	}
+	%>
+    
         <form>
             <input type="text" id="name" autocomplete="off">
             <button>

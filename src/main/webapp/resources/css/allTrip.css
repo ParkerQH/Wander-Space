@@ -201,6 +201,10 @@ section.card .text-content h3 {
 section.card .text-content p {
 	margin: 25px 0 24px;
 	color: #fff;
+	white-space: nowrap;        /* 줄바꿈 방지 */
+    overflow: hidden;           /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis;    /* '...'으로 표시 */
+    width: 600px;  
 }
 
 section.card .text-content a {
@@ -214,7 +218,7 @@ section.card .text-content a {
 }
 
 section.card .text-content a:hover {
-	background: #051c5e;
+	background: rgb(0, 0, 0);
 	color: white;
 }
 

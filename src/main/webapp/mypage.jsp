@@ -56,7 +56,7 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 			for (Trip trip : trips) {
 			%>
 			<div class="portfolio-item" data-country="<%=trip.getCountry()%>">
-				<img src="resources/images/<%=trip.getMainPicture()%>"
+				<img src="resources/images/TravelReview/<%=trip.getMainPicture()%>"
 					alt="<%=trip.getTitle()%>">
 				<h3><%=trip.getTitle()%></h3>
 				<p><%=trip.getContent()%></p>

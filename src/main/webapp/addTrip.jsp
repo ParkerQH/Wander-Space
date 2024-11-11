@@ -24,17 +24,46 @@
 		<!-- Skills Section -->
 		<section class="mytrip">
 			<h2>My Trip</h2>
-			<form action="#" method="post" enctype="multipart/form-data">
+			<form action="addTripAction.jsp" method="post" enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="country">Country:</label> 
-					<select  id="country" name="country" onchange="updateRegions()">
+					<label for="title">Email:</label> <input type="text" name="email"
+						id="email">
+				</div>
+				<div class="form-group">
+					<label for="country">Country:</label> <select id="country"
+						name="country" onchange="updateRegions()">
 						<option value="" selected>Select a country</option>
 						<option value="Korea">Korea</option>
 						<option value="China">China</option>
 						<option value="Japan">Japan</option>
-					</select> 
-					<label for="country">Region:</label>
-					<select id="region" name="region">
+						<option value="France">France</option>
+						<option value="Italy">Italy</option>
+						<option value="USA">USA</option>
+						<option value="Canada">Canada</option>
+						<option value="Germany">Germany</option>
+						<option value="UnitedKingdom">United Kingdom</option>
+						<option value="Australia">Australia</option>
+						<option value="Spain">Spain</option>
+						<option value="Mexico">Mexico</option>
+						<option value="Brazil">Brazil</option>
+						<option value="India">India</option>
+						<option value="Egypt">Egypt</option>
+						<option value="SouthAfrica">South Africa</option>
+						<option value="Thailand">Thailand</option>
+						<option value="Argentina">Argentina</option>
+						<option value="Russia">Russia</option>
+						<option value="Turkey">Turkey</option>
+						<option value="Switzerland">Switzerland</option>
+						<option value="Sweden">Sweden</option>
+						<option value="Portugal">Portugal</option>
+						<option value="Norway">Norway</option>
+						<option value="Netherlands">Netherlands</option>
+						<option value="Greece">Greece</option>
+						<option value="New Zealand">New Zealand</option>
+						<option value="Indonesia">Indonesia</option>
+						<option value="Malaysia">Malaysia</option>
+					</select> <label for="country">Region:</label> <select id="region"
+						name="region">
 						<option value="">Select a region</option>
 					</select>
 				</div>
@@ -50,9 +79,12 @@
 					<label>Main Image:</label> <input type="file" name="mainpicture">
 				</div>
 				<div class="form-group">
-                    <label>Additional Images:</label>
-                    <input type="file" name="pictures" multiple>
-                </div>
+					<label>Additional Images:</label> <input type="file"
+						name="pictures" multiple>
+				</div>
+				<div class="form-group">
+					<input type="submit">
+				</div>
 			</form>
 
 		</section>

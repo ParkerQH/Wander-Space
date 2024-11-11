@@ -42,7 +42,6 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 	<%
 	TripRepository dao = TripRepository.getInstance();
 	ArrayList<Trip> listOfTrips = dao.getAllTrips();
-	System.out.println("저장된 글 수: " + listOfTrips.size());
 	
 	
 	for (int i = 0; i < listOfTrips.size(); i++) {
@@ -56,7 +55,7 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
         <a href="viewTrip.jsp?id=<%=trip.getId()%>">More</a>
     </div>
     <div class="visual">
-        <img src="resources/images/<%=trip.getMainPicture() %>" alt="" />
+        <img src="resources/images/TravelReview/<%=trip.getMainPicture() %>" alt="" />
     </div>
 	</section>
 	<%
