@@ -49,7 +49,7 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 		</section>
 
 		<h2>My Trip</h2>
-		<a href="addTrip.jsp">+Add Trip</a>
+		<a href="addTrip.jsp"><button >+Add Trip</button></a>
 		<!-- Portfolio Section -->
 		<section class="portfolio">
 			<%

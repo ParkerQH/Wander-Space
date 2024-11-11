@@ -22,6 +22,26 @@ body.dark-mode .mytrip {
 	padding: 20px;
 }
 
+.form-group input[type="submit"] {
+    background-color: #4e4e4e;
+    color: #ffffff; /* 흰색 글씨 */
+    font-size: 1.1em; /* 크기 약간 증가 */
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; /* 모서리 둥글게 */
+    cursor: pointer;
+    margin: 0 auto;
+    display: block; /* 가운데 정렬 */
+    width: fit-content; /* 버튼의 크기를 텍스트에 맞춤 */
+    transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #c0c0c0; /* 마우스 올렸을 때 더 밝은 갈색 */
+}
+
+
 .mytrip, .about {
 	margin: 40px 0;
 }

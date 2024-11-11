@@ -79,11 +79,17 @@
 					<label>Main Image:</label> <input type="file" name="mainpicture">
 				</div>
 				<div class="form-group">
-					<label>Additional Images:</label> <input type="file"
-						name="pictures" multiple>
+					<label>Additional Images:</label> 
+					<input type="file" name="pictures" multiple>
 				</div>
 				<div class="form-group">
-					<input type="submit">
+					<button type="button" onclick="addImageInput()">Add Image</button>
+				</div>
+				<div id="additional-images">
+                        <!-- Additional image inputs will be added here -->
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Submit">
 				</div>
 			</form>
 
