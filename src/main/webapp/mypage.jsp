@@ -1,6 +1,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashSet" %>
 <%@ page import="com.wander.dao.TripRepository, com.wander.dto.Trip"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
 TripRepository tripRepo = TripRepository.getInstance();
 ArrayList<Trip> trips = tripRepo.getAllTrips();
@@ -17,6 +18,8 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 </head>
 
 <body>
+	<fmt:setLocale value="${param.language}" />
+	<fmt:setBundle basename="bundle.webBundle" />
 	<%@include file="menu.jsp"%>
 
 	<div class="container">

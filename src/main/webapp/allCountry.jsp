@@ -18,7 +18,7 @@
 <script src="resources/js/allCountry.js"></script>
 </head>
 <body>
-<fmt:setLocale value='<%=request.getParameter("language") %>'/>
+<fmt:setLocale value="${param.language}" />
 <fmt:setBundle basename="bundle.webBundle" />
     <%@include file="menu.jsp"%>
 
@@ -39,7 +39,7 @@
                 <p><fmt:message key="<%=countryIntroKey%>" /></p>
                 <!-- 나라 소개 -->
                 
-                <a href="allTrip.jsp?country=<%=country.getCountry()%>">
+                <a href="allTrip.jsp?country=<%=country.getCountry()%>&language=${param.language}">
                     <button>More</button>
                 </a>
             </div>

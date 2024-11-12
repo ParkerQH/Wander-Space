@@ -1,6 +1,6 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="resources/css/addTrip.css">
 <script src="resources/js/addTrip.js"></script>
 </head>
-
 <body>
+	<fmt:setLocale value="${param.language}" />
+	<fmt:setBundle basename="bundle.webBundle" />
 	<%@include file="menu.jsp"%>
 
 	<div class="container">
@@ -30,8 +31,8 @@
 						id="email">
 				</div>
 				<div class="form-group">
-					<label for="country">Country:</label> <select id="country"
-						name="country" onchange="updateRegions()">
+					<label for="country">Country:</label> 
+					<select id="country" name="country" onchange="updateRegions()">
 						<option value="" selected>Select a country</option>
 						<option value="Korea">Korea</option>
 						<option value="China">China</option>

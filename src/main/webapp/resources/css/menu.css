@@ -15,6 +15,66 @@ body.dark-mode {
     color: #ecf0f1;
 }
 
+.language-dropdown {
+    position: relative; /* 상대적인 위치를 설정하여 드롭다운 메뉴 위치 조정 */
+    display: inline-block; /* 다른 항목들과 나란히 표시 */
+}
+
+.language-dropdown .dropdown-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%; /* 드롭다운 메뉴를 바로 아래로 표시 */
+    left: 0;
+    background-color: #2c2c2c;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    display: none; /* 기본적으로 메뉴를 숨기기 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.language-dropdown:hover .dropdown-menu {
+    display: block; /* hover 시 메뉴 표시 */
+}
+
+.language-dropdown span.fi {
+    font-size: 20px; /* 아이콘 크기 조정 */
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    object-fit: contain; /* 아이콘 비율 유지 */
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    color: #00ffcc;
+}
+
 header {
     background-color: #2c2c2c;
     padding: 10px 0;
@@ -47,6 +107,7 @@ nav {
     gap: 30px;
     margin-left: auto;
     margin-right: 20px;
+    align-items: center; /* 수평 중앙 정렬 */
 }
 
 .nav-links li a {

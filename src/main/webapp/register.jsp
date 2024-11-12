@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="com.wander.dto.Member" %>
 <%@ page import="com.wander.dao.MemberRepository" %>
 <!DOCTYPE html>
@@ -14,7 +15,8 @@
 
 </head>
 <body>
-
+	<fmt:setLocale value="${param.language}" />
+	<fmt:setBundle basename="bundle.webBundle" />
 <%
     // 이미지 개수
     int totalImages = 10;

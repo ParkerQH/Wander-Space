@@ -20,10 +20,12 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 	<% 
 	String countryname = request.getParameter("country");
 	Country country = countryDAO.getCountryByName(countryname);
+	String countryKey = country.getCountry().replace(" ", "");
+    String countryIntroKey = countryKey + "Intro";
 	//String backgroundImage = (country != null && !country.isEmpty()) ? country.toLowerCase() + ".jpg" : "homepage.jpg";
 	%>
     <section class="hero fade-in" style="background-image: url('resources/images/homepage.jpg<%--= backgroundImage --%>');">
-        <h1>Welcome to <%= countryname %></h1>
+        <h1>Welcome to <fmt:message key="<%= countryname %>" /></h1>
     </section>
 
     <section class="plans" id="plans" style="display: flex;">
@@ -32,10 +34,10 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
         		<jsp:param name="country" value="<%= countryname %>" />
     		</jsp:include>
    		<div class="card fade-in">
-    		<h1><%= countryname %></h1>
-    		<h2>- <%= country.getCapital() %></h2>
+    		<h1><fmt:message key="<%= countryname %>" /></h1>
+    		<h2>- <fmt:message key="<%= country.getCapital() %>" /></h2>
             <span class="fi fi-<%= country.getCountryId() %>"></span>
-            <p><%= country != null ? country.getIntro() : "Explore this beautiful country!" %></p>
+            <p><fmt:message key="<%=countryIntroKey%>" /></p>
         </div>
 	</section>
 	

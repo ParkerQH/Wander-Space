@@ -12,7 +12,7 @@
 	<script src="resources/js/home.js"></script>
 </head>
 <body>
-<fmt:setLocale value='<%=request.getParameter("language") %>'/>
+<fmt:setLocale value="${param.language}"/>
 <fmt:setBundle basename="bundle.webBundle" />
     <%@include file="menu.jsp" %>
 
@@ -28,7 +28,7 @@
             <span class="fi fi-kr"></span>
             <h3><fmt:message key = "Korea" /></h3>
             <p><fmt:message key = "KoreaIntro" /></p>
-            <a href="allTrip.jsp?country=Korea">
+            <a href="allTrip.jsp?country=Korea&language=${param.language}">
                 <button>More</button>
             </a>
         </div>
@@ -36,7 +36,7 @@
             <span class="fi fi-cn"></span>
             <h3><fmt:message key = "China" /></h3>
             <p><fmt:message key = "ChinaIntro" /></p>
-            <a href="allTrip.jsp?country=China">
+            <a href="allTrip.jsp?country=China&language=${param.language}">
                 <button>More</button>
             </a>
         </div>
@@ -44,12 +44,12 @@
             <span class="fi fi-jp"></span>
             <h3><fmt:message key = "Japan" /></h3>
             <p><fmt:message key = "JapanIntro" /></p>
-            <a href="allTrip.jsp?country=Japan">
+            <a href="allTrip.jsp?country=Japan&language=${param.language}">
                 <button>More</button>
             </a>
         </div>
     </div>
-    <a href="allCountry.jsp">
+    <a href="allCountry.jsp?language=${param.language}">
             <button class="discord-button button-3d">More</button>
     </a>
 	</section>

@@ -2,6 +2,7 @@
 import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepository, com.wander.dto.Trip, com.wander.dao.TripRepository" %>
 <jsp:useBean id="countryDAO" class="com.wander.dao.CountryRepository" scope="session" />
 <jsp:useBean id="tripDAO" class="com.wander.dao.TripRepository" scope="session" />
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,8 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 	<script src="resources/js/viewTrip.js"></script>
 </head>
 <body>
+	<fmt:setLocale value="${param.language}" />
+	<fmt:setBundle basename="bundle.webBundle" />
     <%@include file="menu.jsp" %>
 
 	<%
