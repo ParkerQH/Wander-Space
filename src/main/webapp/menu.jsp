@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +11,12 @@
 <link rel="stylesheet" href="resources/css/menu.css">
 </head>
 <body>
+<fmt:setLocale value='<%=request.getParameter("language") %>'/>
+<fmt:bundle basename="bundle.webBundle"/>
 	<header>
 		<nav>
 			<a href="home.jsp" class="logo">Wander Space</a>
+			<a href="?language=ko">Korean</a> | <a href="?language=en">English</a>
 			<ul class="nav-links">
 				<li><a href="login.jsp">Login</a></li>
 				<li><a href="mypage.jsp">My Page</a></li>

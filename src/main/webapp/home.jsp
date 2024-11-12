@@ -1,5 +1,6 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,8 @@
 	<script src="resources/js/home.js"></script>
 </head>
 <body>
+<fmt:setLocale value='<%=request.getParameter("language") %>'/>
+<fmt:setBundle basename="bundle.webBundle" />
     <%@include file="menu.jsp" %>
 
     <section class="hero fade-in">
@@ -23,24 +26,24 @@
     <div class="plan-cards">
         <div class="card fade-in">
             <span class="fi fi-kr"></span>
-            <h3>Korea</h3>
-            <p>Gyeongbokgung in Seoul, Myeongdong, Hallasan and beaches in Jeju! Don't miss Korean food and Hongdae nightlife!</p>
+            <h3><fmt:message key = "Korea" /></h3>
+            <p><fmt:message key = "KoreaIntro" /></p>
             <a href="allTrip.jsp?country=Korea">
                 <button>More</button>
             </a>
         </div>
         <div class="card fade-in">
             <span class="fi fi-cn"></span>
-            <h3>China</h3>
-            <p>Great Wall in Beijing, The Bund in Shanghai, and Zhangjiajie's natural scenery! Don't miss Chinese cuisine!</p>
+            <h3><fmt:message key = "China" /></h3>
+            <p><fmt:message key = "ChinaIntro" /></p>
             <a href="allTrip.jsp?country=China">
                 <button>More</button>
             </a>
         </div>
         <div class="card fade-in">
             <span class="fi fi-jp"></span>
-            <h3>Japan</h3>
-            <p>Shibuya in Tokyo, Gion in Kyoto, and Dotonbori in Osaka! Don't miss Japanese cuisine!</p>
+            <h3><fmt:message key = "Japan" /></h3>
+            <p><fmt:message key = "JapanIntro" /></p>
             <a href="allTrip.jsp?country=Japan">
                 <button>More</button>
             </a>
