@@ -28,14 +28,14 @@
             <%
             List<Country> countries = countryDAO.getAllCountries(); // 모든 나라 리스트를 가져옴
             for (Country country : countries) {
-                String countryIntroKey = country.getCountry() + "Intro"; // JSP 변수로 설정
+            	String countryKey = country.getCountry().replace(" ", "");
+                String countryIntroKey = countryKey + "Intro"; // JSP 변수로 설정
             %>
             <div class="card fade-in">
                 <span class="fi fi-<%=country.getCountryId()%>"></span>
                 <!-- 각 나라의 ID로 아이콘을 표시 -->
-                <h3><fmt:message key="<%=country.getCountry()%>" /></h3>
+                <h3><fmt:message key="<%=countryKey%>" /></h3>
                 <!-- 나라 이름 -->
-
                 <p><fmt:message key="<%=countryIntroKey%>" /></p>
                 <!-- 나라 소개 -->
                 

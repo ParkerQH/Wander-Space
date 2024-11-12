@@ -16,7 +16,7 @@
 	<header>
 		<nav>
 			<a href="home.jsp" class="logo">Wander Space</a>
-			<a href="?language=ko">Korean</a> | <a href="?language=en">English</a>
+			<a href="?language=ko">Korean</a> | <a href="?language=en">English</a> | <a href="?language=jp">Japanese</a> | <a href="?language=zh_CN">Chinese</a>
 			<ul class="nav-links">
 				<li><a href="login.jsp">Login</a></li>
 				<li><a href="mypage.jsp">My Page</a></li>
