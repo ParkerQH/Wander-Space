@@ -34,7 +34,7 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 
 		<!-- Skills Section -->
 		<section class="countrys">
-			<h2>Country</h2>
+			<h2><fmt:message key = "Places" /></h2>
 			<div class="countrys-list">
 				<div class="country" onclick="filterTrips('All')">All</div>
 				<%
@@ -44,15 +44,15 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 				}
 				for (String country : countries) {
 				%>
-				<div class="country" onclick="filterTrips('<%=country%>')"><%=country%></div>
+				<div class="country" onclick="filterTrips('<%=country%>')"><fmt:message key = "<%=country%>" /></div>
 				<%
 				}
 				%>
 			</div>
 		</section>
 
-		<h2>My Trip</h2>
-		<a href="addTrip.jsp"><button >+Add Trip</button></a>
+		<h2><fmt:message key = "MyTrip" /></h2>
+		<a href="addTrip.jsp"><button >+<fmt:message key = "AddTrip" /></button></a>
 		<!-- Portfolio Section -->
 		<section class="portfolio">
 			<%
@@ -63,7 +63,7 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 					alt="<%=trip.getTitle()%>">
 				<h3><%=trip.getTitle()%></h3>
 				<p><%=trip.getContent()%></p>
-				<a href="viewTrip.jsp?id=<%=trip.getId()%>">More</a>
+				<a href="viewTrip.jsp?id=<%=trip.getId()%>"><fmt:message key="More" /></a>
 			</div>
 			<%
 			}

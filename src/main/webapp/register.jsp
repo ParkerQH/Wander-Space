@@ -63,14 +63,14 @@
 <div class="register">
     <img src="resources/images/<%= selectedImage %>" alt="register image" class="register__img">
     <form action="" class="container" method="post">
-        <h1 class="register__title">Register</h1>
+        <h1 class="register__title"><fmt:message key = "Register" /></h1>
 
         <div class="register__content">
             <div class="register__box">
                 <i class="ri-user-line register__icon"></i>
                 <div class="register__box-input">
                     <input type="text" required class="register__input" id="register-name" name="register-name" placeholder=" ">
-                    <label for="register-name" class="register__label">Name</label>
+                    <label for="register-name" class="register__label"><fmt:message key = "Name" /></label>
                 </div>
             </div>
 
@@ -78,7 +78,7 @@
                 <i class="ri-user-3-line register__icon"></i>
                 <div class="register__box-input">
                     <input type="email" required class="register__input" id="register-email" name="register-email" placeholder=" ">
-                    <label for="register-email" class="register__label">Email</label>
+                    <label for="register-email" class="register__label"><fmt:message key = "Email" /></label>
                 </div>
             </div>
 
@@ -86,7 +86,7 @@
                 <i class="ri-phone-line register__icon"></i>
                 <div class="register__box-input">
                     <input type="tel" required class="register__input" id="register-phone" name="register-phone" placeholder=" " pattern="^(01[016789]|070)-?[0-9]{3,4}-?[0-9]{4}$" title="Ex. 010-1234-5678 or 01012345678">
-                    <label for="register-phone" class="register__label">Phone Number</label>
+                    <label for="register-phone" class="register__label"><fmt:message key = "PhoneNumber" /></label>
                 </div>
             </div>
 
@@ -94,7 +94,7 @@
                 <i class="ri-account-box-line register__icon"></i>
                 <div class="register__box-input">
                     <input type="text" required class="register__input" id="register-nickname" name="register-nickname" placeholder=" ">
-                    <label for="register-nickname" class="register__label">Nickname</label>
+                    <label for="register-nickname" class="register__label"><fmt:message key = "Nickname" /></label>
                 </div>
             </div>
 
@@ -102,16 +102,16 @@
                 <i class="ri-lock-2-line register__icon"></i>
                 <div class="register__box-input">
                     <input type="password" required class="register__input" id="register-pass" name="register-pass" placeholder=" " pattern=".{8,}" title="비밀번호는 8자 이상으로 작성해주세요.">
-                    <label for="register-pass" class="register__label">Password</label>
+                    <label for="register-pass" class="register__label"><fmt:message key = "Password" /></label>
                     <i class="ri-eye-off-line register__eye" id="register-eye" onclick="togglePasswordVisibility()"></i>
                 </div>
             </div>
         </div>
 
-        <button type="submit" class="register__button">Register</button>
+        <button type="submit" class="register__button"><fmt:message key = "Register" /></button>
 
         <p class="register__login">
-            Already have an account? <a href="login.jsp">Log in</a>
+            <fmt:message key = "Already"/> <a href="login.jsp?language=${param.language}"><fmt:message key = "Login" /></a>
         </p>
     </form>
 </div>

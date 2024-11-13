@@ -29,7 +29,7 @@
             <h3><fmt:message key = "Korea" /></h3>
             <p><fmt:message key = "KoreaIntro" /></p>
             <a href="allTrip.jsp?country=Korea&language=${param.language}">
-                <button>More</button>
+                <button><fmt:message key = "More" /></button>
             </a>
         </div>
         <div class="card fade-in">
@@ -37,7 +37,7 @@
             <h3><fmt:message key = "China" /></h3>
             <p><fmt:message key = "ChinaIntro" /></p>
             <a href="allTrip.jsp?country=China&language=${param.language}">
-                <button>More</button>
+                <button><fmt:message key = "More" /></button>
             </a>
         </div>
         <div class="card fade-in">
@@ -45,17 +45,17 @@
             <h3><fmt:message key = "Japan" /></h3>
             <p><fmt:message key = "JapanIntro" /></p>
             <a href="allTrip.jsp?country=Japan&language=${param.language}">
-                <button>More</button>
+                <button><fmt:message key = "More" /></button>
             </a>
         </div>
     </div>
     <a href="allCountry.jsp?language=${param.language}">
-            <button class="discord-button button-3d">More</button>
+            <button class="discord-button button-3d"><fmt:message key = "More" /></button>
     </a>
 	</section>
 
 	<section class="contact">
-       	<h2>Contact Me</h2>
+       	<h2><fmt:message key = "Contact" /></h2>
         <p>Email: <a href="mailto:blueskyaoa7@gmail.com">blueskyaoa7@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/ParkerQH">GitHub ParkerQH</a></p>
     </section>

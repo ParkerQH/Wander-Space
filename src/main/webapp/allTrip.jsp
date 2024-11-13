@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
 import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepository, com.wander.dto.Trip, com.wander.dao.TripRepository" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:useBean id="countryDAO" class="com.wander.dao.CountryRepository" scope="session" />
 <jsp:useBean id="tripDAO" class="com.wander.dao.TripRepository" scope="session" />
 <!DOCTYPE html>
@@ -15,6 +16,8 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 	<script src="resources/js/allTrip.js"></script>
 </head>
 <body>
+<fmt:setLocale value="${param.language}" />
+<fmt:setBundle basename="bundle.webBundle" />
     <%@include file="menu.jsp" %>
 
 	<% 
@@ -54,7 +57,7 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
     <div class="text-content">
         <h3><%=trip.getTitle() %></h3>
         <p><%=trip.getContent() %></p>  
-        <a href="viewTrip.jsp?id=<%=trip.getId()%>">More</a>
+        <a href="viewTrip.jsp?id=<%=trip.getId()%>&language=${param.language}"><fmt:message key = "More" /></a>
     </div>
     <div class="visual">
         <img src="resources/images/TravelReview/<%=trip.getMainPicture() %>" alt="" />

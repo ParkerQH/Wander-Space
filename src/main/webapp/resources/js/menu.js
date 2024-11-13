@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // 언어별 아이콘과 텍스트 설정
     const languageMap = {
         "ko": { icon: "fi-kr", text: "KR" },
-        "en": { icon: "fi-gb", text: "EN" },
-        "jp": { icon: "fi-jp", text: "JP" },
-        "zh_CN": { icon: "fi-cn", text: "CN" }
+        "en": { icon: "fi-us", text: "EN" },
+		"zh_CN": { icon: "fi-cn", text: "CN" },
+        "jp": { icon: "fi-jp", text: "JP" }
     };
 
     // 현재 언어로 버튼 텍스트 및 아이콘 업데이트

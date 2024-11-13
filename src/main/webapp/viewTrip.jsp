@@ -25,6 +25,8 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 		TripRepository tripdao = TripRepository.getInstance();
 		Trip trip = tripdao.getTripById(tripId);
 		Country country = countryDAO.getCountryByName(trip.getCountry());
+		String countryKey = country.getCountry().replace(" ", "");
+	    String countryIntroKey = countryKey + "Intro";
 		//String backgroundImage = (country != null && !country.isEmpty()) ? country.toLowerCase() + ".jpg" : "homepage.jpg";
 	%>
     <section class="hero fade-in" style="background-image: url('resources/images/homepage.jpg<%--= backgroundImage --%>');">
@@ -37,10 +39,10 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
         		<jsp:param name="country" value="<%= trip.getRegion() %>" />
     		</jsp:include>
    		<div class="card fade-in">
-    		<h1><%= trip.getCountry() %></h1>
-    		<h2>- <%= trip.getRegion() %></h2>
+    		<h1><fmt:message key = "<%= trip.getCountry() %>" /></h1>
+    		<h2>- <fmt:message key="<%= country.getCapital() %>" /></h2>
             <span class="fi fi-<%= country.getCountryId() %>"></span>
-            <p><%= country != null ? country.getIntro() : "Explore this beautiful country!" %></p>
+            <p><fmt:message key="<%=countryIntroKey%>" /></p>
         </div>
 	</section>
 	

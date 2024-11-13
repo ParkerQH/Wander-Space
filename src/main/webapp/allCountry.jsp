@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="java.util.List, com.wander.dto.Country, com.wander.dao.CountryRepository"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:useBean id="countryDAO" class="com.wander.dao.CountryRepository" scope="session" />
 <!DOCTYPE html>
@@ -40,7 +39,7 @@
                 <!-- 나라 소개 -->
                 
                 <a href="allTrip.jsp?country=<%=country.getCountry()%>&language=${param.language}">
-                    <button>More</button>
+                    <button><fmt:message key = "More" /></button>
                 </a>
             </div>
             <%

@@ -41,7 +41,7 @@
                 <i class="ri-user-3-line login__icon"></i>
                 <div class="login__box-input">
                     <input type="email" name="email" required class="login__input" id="login-email" placeholder=" ">
-                    <label for="login-email" class="login__label">Email</label>
+                    <label for="login-email" class="login__label"><fmt:message key = "Email" /></label>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                 <i class="ri-lock-2-line login__icon"></i>
                 <div class="login__box-input">
                     <input type="password" name="password" required class="login__input" id="login-pass" placeholder=" ">
-                    <label for="login-pass" class="login__label">Password</label>
+                    <label for="login-pass" class="login__label"><fmt:message key = "Password" /></label>
                     <i class="ri-eye-off-line login__eye" id="login-eye" onclick="togglePasswordVisibility()"></i>
                 </div>
             </div>
@@ -58,10 +58,10 @@
             <div class="error-message" id="error-message"></div>
         </div>
 
-        <button type="submit" class="login__button">Login</button>
+        <button type="submit" class="login__button"><fmt:message key = "Login" /></button>
 
         <p class="login__register">
-            <a href="register.jsp">Register</a> | <a href="home.jsp">Home</a>
+            <a href="register.jsp?language=${param.language}"><fmt:message key = "Register" /></a> | <a href="home.jsp?language=${param.language}"><fmt:message key = "Home" /></a>
         </p>
 
         <% 

@@ -26,9 +26,9 @@
     			</a>
                 <ul class="dropdown-menu">
                     <li><a href="?language=ko"><span class="fi fi-kr"></span> KR</a></li>
-                    <li><a href="?language=en"><span class="fi fi-gb"></span> EN</a></li>
-                    <li><a href="?language=jp"><span class="fi fi-jp"></span> JP</a></li>
+                    <li><a href="?language=en"><span class="fi fi-us"></span> EN</a></li>
                     <li><a href="?language=zh_CN"><span class="fi fi-cn"></span> CN</a></li>
+                    <li><a href="?language=jp"><span class="fi fi-jp"></span> JP</a></li>
                 </ul>
             </li>
             <li><a href="login.jsp?language=${param.language}">Login</a></li>
