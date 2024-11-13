@@ -52,7 +52,7 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 		</section>
 
 		<h2><fmt:message key = "MyTrip" /></h2>
-		<a href="addTrip.jsp"><button >+<fmt:message key = "AddTrip" /></button></a>
+		<a href="addTrip.jsp?language=${param.language}"><button >+<fmt:message key = "AddTrip" /></button></a>
 		<!-- Portfolio Section -->
 		<section class="portfolio">
 			<%
@@ -63,7 +63,7 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 					alt="<%=trip.getTitle()%>">
 				<h3><%=trip.getTitle()%></h3>
 				<p><%=trip.getContent()%></p>
-				<a href="viewTrip.jsp?id=<%=trip.getId()%>"><fmt:message key="More" /></a>
+				<a href="viewTrip.jsp?id=<%=trip.getId()%>&language=${param.language}"><fmt:message key="More" /></a>
 			</div>
 			<%
 			}
