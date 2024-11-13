@@ -31,8 +31,8 @@
                     <li><a href="?language=zh_CN"><span class="fi fi-cn"></span> CN</a></li>
                 </ul>
             </li>
-            <li><a href="login.jsp&language=${param.language}">Login</a></li>
-            <li><a href="mypage.jsp&language=${param.language}">My Page</a></li>
+            <li><a href="login.jsp?language=${param.language}">Login</a></li>
+            <li><a href="mypage.jsp?language=${param.language}">My Page</a></li>
         </ul>
         <button id="themeToggle">
             <i class="fas fa-adjust"></i>
