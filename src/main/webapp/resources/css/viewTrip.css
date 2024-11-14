@@ -14,6 +14,10 @@ body.dark-mode {
     color: #ecf0f1;
 }
 
+body.dark-mode .plans {
+    background-color: #444;
+}
+
 header {
     background-color: #2c2c2c;
     padding: 20px 0;

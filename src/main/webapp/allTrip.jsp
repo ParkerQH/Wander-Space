@@ -23,6 +23,8 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 	<% 
 	String countryname = request.getParameter("country");
 	Country country = countryDAO.getCountryByName(countryname);
+	String countryName = countryname.replace(" ", "");
+	String countryCalpital = country.getCapital().replace(" ", "");
 	String countryKey = country.getCountry().replace(" ", "");
     String countryIntroKey = countryKey + "Intro";
 	//String backgroundImage = (country != null && !country.isEmpty()) ? country.toLowerCase() + ".jpg" : "homepage.jpg";
@@ -37,8 +39,8 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
         		<jsp:param name="country" value="<%= countryname %>" />
     		</jsp:include>
    		<div class="card fade-in">
-    		<h1><fmt:message key="<%= countryname %>" /></h1>
-    		<h2>- <fmt:message key="<%= country.getCapital() %>" /></h2>
+    		<h1><fmt:message key="<%= countryName %>" /></h1>
+    		<h2>- <fmt:message key="<%= countryCalpital %>" /></h2>
             <span class="fi fi-<%= country.getCountryId() %>"></span>
             <p><fmt:message key="<%=countryIntroKey%>" /></p>
         </div>
