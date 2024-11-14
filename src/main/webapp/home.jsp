@@ -17,12 +17,12 @@
     <%@include file="menu.jsp" %>
 
     <section class="hero fade-in">
-        <h1>Welcome to Wander Space</h1>
-        <p>Discover our services and offerings.</p>
+        <h1><fmt:message key = "WelcomeMessage" /></h1>
+        <p><fmt:message key = "WelcomeMessage2" /></p>
     </section>
 
     <section class="plans" id="plans">
-    <h2 class="fade-in">A Popular Destination</h2>
+    <h2 class="fade-in"><fmt:message key = "PopularRegion" /></h2>
     <div class="plan-cards">
         <div class="card fade-in">
             <span class="fi fi-kr"></span>
@@ -55,7 +55,7 @@
 	</section>
 
 	<section class="contact">
-       	<h2><fmt:message key = "Contact" /></h2>
+       	<h2>Contact</h2>
         <p>Email: <a href="mailto:blueskyaoa7@gmail.com">blueskyaoa7@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/ParkerQH">GitHub ParkerQH</a></p>
     </section>

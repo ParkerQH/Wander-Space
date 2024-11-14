@@ -23,15 +23,7 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 	<%@include file="menu.jsp"%>
 
 	<div class="container">
-		<!-- About Me Section -->
-		<section class="about">
-			<br> <br>
-			<h2>About Me</h2>
-			<p>Hello! I'm a passionate web developer with experience in
-				creating dynamic and responsive web applications. I enjoy coding and
-				am always eager to learn new technologies.</p>
-		</section>
-
+		<br><br>
 		<!-- Skills Section -->
 		<section class="countrys">
 			<h2><fmt:message key = "Places" /></h2>
@@ -70,21 +62,6 @@ ArrayList<Trip> trips = tripRepo.getAllTrips();
 			%>
 		</section>
 
-		<!-- Contact Section -->
-		<section class="contact">
-			<h2>Contact Me</h2>
-			<p>Feel free to reach out to me via email or connect with me on
-				social media!</p>
-			<p>
-				Email: <a href="mailto:yourname@example.com">yourname@example.com</a>
-			</p>
-			<p>
-				LinkedIn: <a href="#">Your LinkedIn Profile</a>
-			</p>
-			<p>
-				GitHub: <a href="#">Your GitHub Profile</a>
-			</p>
-		</section>
 	</div>
 
 	<%@include file="footer.jsp"%>

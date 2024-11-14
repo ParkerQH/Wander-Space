@@ -27,10 +27,10 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 	String countryCalpital = country.getCapital().replace(" ", "");
 	String countryKey = country.getCountry().replace(" ", "");
     String countryIntroKey = countryKey + "Intro";
-	//String backgroundImage = (country != null && !country.isEmpty()) ? country.toLowerCase() + ".jpg" : "homepage.jpg";
+    String backgroundImage = (country != null && country.getCountry() != null && !country.getCountry().isEmpty()) ? country.getCountry() + ".jpg"  : "homepage.jpg";
 	%>
-    <section class="hero fade-in" style="background-image: url('resources/images/homepage.jpg<%--= backgroundImage --%>');">
-        <h1>Welcome to <fmt:message key="<%= countryname %>" /></h1>
+    <section class="hero fade-in" style="background-image: url('resources/images/Countries/<%= backgroundImage %>');">
+        <h1>Welcome to <%= countryname %></h1>
     </section>
 
     <section class="plans" id="plans" style="display: flex;">

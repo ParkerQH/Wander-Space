@@ -22,7 +22,7 @@
     <%@include file="menu.jsp"%>
 
     <section class="plans" id="plans">
-        <h2 class="fade-in">All Country</h2>
+        <h2 class="fade-in"><fmt:message key = "AllCountry" /></h2>
         <div class="plan-cards">
             <%
             List<Country> countries = countryDAO.getAllCountries(); // 모든 나라 리스트를 가져옴

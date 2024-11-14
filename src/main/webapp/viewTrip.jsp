@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
-import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepository, com.wander.dto.Trip, com.wander.dao.TripRepository" %>
+import="java.util.*, java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepository, com.wander.dto.Trip, com.wander.dao.TripRepository" %>
 <jsp:useBean id="countryDAO" class="com.wander.dao.CountryRepository" scope="session" />
 <jsp:useBean id="tripDAO" class="com.wander.dao.TripRepository" scope="session" />
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -28,9 +28,9 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 		String countryKey = country.getCountry().replace(" ", "");
 	    String countryIntroKey = countryKey + "Intro";
 	    String getRegion = trip.getRegion().replace(" ", "");
-		//String backgroundImage = (country != null && !country.isEmpty()) ? country.toLowerCase() + ".jpg" : "homepage.jpg";
+	    String backgroundImage = (country != null && country.getCountry() != null && !country.getCountry().isEmpty()) ? country.getCountry() + ".jpg"  : "homepage.jpg";
 	%>
-    <section class="hero fade-in" style="background-image: url('resources/images/homepage.jpg<%--= backgroundImage --%>');">
+    <section class="hero fade-in" style="background-image: url('resources/images/Countries/<%= backgroundImage %>');">
         <h1>Welcome to <%= trip.getCountry() %></h1>
     </section>
 

@@ -1,4 +1,5 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="${param.language}">
 <head>
@@ -17,9 +18,8 @@
 		<!-- About Me Section -->
 		<section class="about">
 			<br> <br>
-			<h2>About Your Trip</h2>
-			<p>How was your trip? Share where you visited and the special
-				moments you experienced</p>
+			<h2><fmt:message key="AboutTrip" /></h2>
+			<p><fmt:message key="HowYourTrip" /></p>
 		</section>
 
 		<!-- Skills Section -->
@@ -70,28 +70,29 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="title">Title:</label> <input type="text" name="title"
+					<label for="title"><fmt:message key="Title" />:</label> <input type="text" name="title"
 						id="title">
 				</div>
 				<div class="form-group">
-					<label for="content">Content:</label>
+					<label for="content"><fmt:message key="Content" />:</label>
 					<textarea name="content" id="content" rows="10"></textarea>
 				</div>
 				<div class="form-group">
-					<label>Main Image:</label> <input type="file" name="mainpicture">
+					<label><fmt:message key="MainImage" />:</label> <input type="file" name="mainpicture">
 				</div>
 				<div class="form-group">
-					<label>Additional Images:</label> <input type="file"
+					<label><fmt:message key="AdditionalImages" />:</label> <input type="file"
 						name="pictures" multiple>
 				</div>
 				<div class="form-group">
-					<button type="button" onclick="addImageInput()">Add Image</button>
+					<button type="button" onclick="addImageInput()"><fmt:message key="AddImage" /></button>
 				</div>
 				<div id="additional-images">
 					<!-- Additional image inputs will be added here -->
 				</div>
 				<div class="form-group">
-					<input type="submit" value="Submit">
+					<c:set var="submitText"><fmt:message key="Submit" /></c:set>
+					<input type="submit" value="${submitText}">
 				</div>
 			</form>
 
