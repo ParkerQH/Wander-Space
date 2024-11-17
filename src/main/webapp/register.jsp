@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page import="com.wander.dto.Member" %>
-<%@ page import="com.wander.dao.MemberRepository" %>
+<%@ page import="java.sql.*" %>
+<%@ include file="dbconn.jsp" %> <!-- DB 연결 파일을 포함 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +13,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="resources/js/register.js"></script> <!-- JS 파일 포함 -->
     <title>WanderSpace Register Page</title>
-
 </head>
 <body>
-	<fmt:setLocale value="${param.language}" />
-	<fmt:setBundle basename="bundle.webBundle" />
+    <fmt:setLocale value="${param.language}" />
+    <fmt:setBundle basename="bundle.webBundle" />
+
 <%
     // 이미지 개수
     int totalImages = 10;
@@ -34,6 +35,7 @@
     // 폼이 제출될 경우
     boolean showNotification = false; // 알림창 표시 여부
     String notificationMessage = ""; // 알림 메시지
+    String welcomeMessage = ""; // 회원가입 후 환영 메시지
 
     if ("POST".equalsIgnoreCase(request.getMethod())) {
         String name = request.getParameter("register-name");
@@ -42,27 +44,58 @@
         String nickname = request.getParameter("register-nickname");
         String password = request.getParameter("register-pass");
 
-        Member member = new Member(name, email, phone, nickname, password);
-        MemberRepository memberRepo = MemberRepository.getInstance(); // 싱글턴 인스턴스 가져오기
+        // DB 연결 후 회원 정보 저장
+        PreparedStatement pstmt = null;
+        try {
+            String checkEmailQuery = "SELECT COUNT(*) FROM users WHERE u_email = ?";
+            pstmt = conn.prepareStatement(checkEmailQuery);
+            pstmt.setString(1, email);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next() && rs.getInt(1) > 0) {
+                showNotification = true; // 알림창 표시
+                notificationMessage = "이미 존재하는 이메일입니다. 다른 이메일을 사용해주세요."; // 알림 메시지
+            } else {
+                String sql = "INSERT INTO users (u_email, u_name, u_phoneNumber, u_nickname, u_password) VALUES (?, ?, ?, ?, ?)";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, email);
+                pstmt.setString(2, name);
+                pstmt.setString(3, phone);
+                pstmt.setString(4, nickname);
+                pstmt.setString(5, password);
 
-        boolean isRegistered = memberRepo.registerMember(member);
-        if (isRegistered) {
-            response.sendRedirect("login.jsp"); // 등록 성공 시 로그인 페이지로 리다이렉트
-        } else {
-            showNotification = true; // 알림창 표시
-            notificationMessage = "이미 존재하는 이메일입니다. 다른 이메일을 사용해주세요."; // 알림 메시지
+                int result = pstmt.executeUpdate();
+                if (result > 0) {
+                	showNotification = true;
+                    welcomeMessage = "환영합니다, " + nickname + "!";
+                    response.setHeader("Refresh", "3; URL=login.jsp"); // 등록 성공 시 로그인 페이지로 리다이렉트
+                } else {
+                    showNotification = true; // 알림창 표시
+                    notificationMessage = "회원 등록에 실패했습니다."; // 알림 메시지
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (pstmt != null) 
+                	pstmt.close();
+                if (conn != null) 
+                	conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 %>
 
 <!-- 알림창 -->
 <div class="notification" id="notification">
-    <%= notificationMessage %>
+    <%= showNotification ? (welcomeMessage.isEmpty() ? notificationMessage : welcomeMessage) : "" %>
 </div>
 
 <div class="register">
     <img src="resources/images/<%= selectedImage %>" alt="register image" class="register__img">
-    <form action="" class="container" method="post">
+    <form action="register.jsp" class="container" method="post">
         <h1 class="register__title"><fmt:message key = "Register" /></h1>
 
         <div class="register__content">

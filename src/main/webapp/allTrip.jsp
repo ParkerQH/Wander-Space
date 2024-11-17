@@ -1,10 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
-import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepository, com.wander.dto.Trip, com.wander.dao.TripRepository" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.sql.*" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<jsp:useBean id="countryDAO" class="com.wander.dao.CountryRepository" scope="session" />
-<jsp:useBean id="tripDAO" class="com.wander.dao.TripRepository" scope="session" />
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,15 +16,21 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
 <fmt:setLocale value="${param.language}" />
 <fmt:setBundle basename="bundle.webBundle" />
     <%@include file="menu.jsp" %>
-
+	<%@ include file="dbconn.jsp" %>
 	<% 
 	String countryname = request.getParameter("country");
-	Country country = countryDAO.getCountryByName(countryname);
-	String countryName = countryname.replace(" ", "");
-	String countryCalpital = country.getCapital().replace(" ", "");
-	String countryKey = country.getCountry().replace(" ", "");
-    String countryIntroKey = countryKey + "Intro";
-    String backgroundImage = (country != null && country.getCountry() != null && !country.getCountry().isEmpty()) ? country.getCountry() + ".jpg"  : "homepage.jpg";
+	PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    String sql = "SELECT * FROM country WHERE country_name = ?";
+    pstmt = conn.prepareStatement(sql);
+    pstmt.setString(1, countryname);
+    rs = pstmt.executeQuery();
+    
+    while (rs.next()) {
+		String countryName = countryname.replace(" ", "");
+		String countryCalpital = rs.getString("capital").replace(" ", "");
+		String countryIntro = countryName + "Intro";
+    	String backgroundImage = (rs != null && rs.getString("country_name") != null && !rs.getString("country_name").isEmpty()) ? rs.getString("country_name") + ".jpg"  : "homepage.jpg";
 	%>
     <section class="hero fade-in" style="background-image: url('resources/images/Countries/<%= backgroundImage %>');">
         <h1>Welcome to <%= countryname %></h1>
@@ -41,33 +44,36 @@ import="java.util.ArrayList, com.wander.dto.Country, com.wander.dao.CountryRepos
    		<div class="card fade-in">
     		<h1><fmt:message key="<%= countryName %>" /></h1>
     		<h2>- <fmt:message key="<%= countryCalpital %>" /></h2>
-            <span class="fi fi-<%= country.getCountryId() %>"></span>
-            <p><fmt:message key="<%=countryIntroKey%>" /></p>
+            <span class="fi fi-<%=rs.getString("country_id")%>"></span>
+            <p><fmt:message key="<%=countryIntro%>" /></p>
         </div>
 	</section>
 	
 	<%
-	TripRepository dao = TripRepository.getInstance();
-	ArrayList<Trip> listOfTrips = dao.getAllTrips();
-	
-	
-	for (int i = 0; i < listOfTrips.size(); i++) {
-		Trip trip = listOfTrips.get(i);
-		 if (trip.getCountry().equalsIgnoreCase(countryname)) { //국가가 일치하는 경우만 출력
+    sql = "SELECT * FROM trip WHERE t_country = ?";
+    pstmt = conn.prepareStatement(sql);
+    pstmt.setString(1, countryname);
+    rs = pstmt.executeQuery();
+    
+    while (rs.next()) {
 	%>
 	<section class="card">
     <div class="text-content">
-        <h3><%=trip.getTitle() %></h3>
-        <p><%=trip.getContent() %></p>  
-        <a href="viewTrip.jsp?id=<%=trip.getId()%>&language=${param.language}"><fmt:message key = "More" /></a>
+        <h3><%=rs.getString("t_title") %></h3>
+        <p><%=rs.getString("t_content") %></p>  
+        <a href="viewTrip.jsp?id=<%=rs.getString("t_id") %>&language=${param.language}"><fmt:message key = "More" /></a>
     </div>
     <div class="visual">
-        <img src="resources/images/TravelReview/<%=trip.getMainPicture() %>" alt="" />
+        <img src="resources/images/TravelReview/<%=rs.getString("t_mainpicture") %>" alt="" />
     </div>
 	</section>
 	<%
-		 }
+    }
 	}
+    if (rs!=null)
+		rs.close();
+	if (pstmt!=null)
+		pstmt.close();
 	%>
     <%@include file="footer.jsp" %>
 </body>
