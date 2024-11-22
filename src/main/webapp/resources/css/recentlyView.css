@@ -1,0 +1,170 @@
+body {
+	font-family: Arial, sans-serif;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #f9f9f9;
+	display: flex; /* Flexbox 활성화 */
+	flex-direction: column; /* 세로 방향으로 배치 */
+}
+
+body.dark-mode {
+    background-color: #2b2b2b;
+    color: #ecf0f1;
+}
+
+header {
+	background: #333;
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+header.dark-mode {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .countrys {
+    background-color: #444;
+}
+
+/* 다크 모드일 때 portfolio-item, skill-item 스타일 */
+body.dark-mode .portfolio-item,
+body.dark-mode .country {
+    background-color: #333;
+    border-color: #666;
+}
+
+/* 다크 모드일 때 hover 효과 */
+body.dark-mode .country:hover {
+    background-color: #666;
+}
+
+body.dark-mode .portfolio-item:hover {
+    background-color: #555;
+}
+
+.float-left {
+    float: left;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.float-left:hover {
+    text-decoration: underline;
+}
+
+.float-right {
+    float: right;
+    padding: 5px 10px;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.float-right:hover {
+    background-color: #C70039;
+}
+
+
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.portfolio, .countrys, .about, .contact {
+	margin: 40px 0;
+}
+
+.portfolio {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.portfolio-item {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 15px;
+	width: calc(30% - 40px);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s;
+}
+
+.portfolio-item:hover {
+	transform: scale(1.05);
+}
+
+.portfolio-item img {
+    width: 100%;       /* 부모 요소 너비에 맞추기 */
+    height: 200px;      /* 부모 요소 높이에 맞추기 */
+    object-fit: cover; /* 비율을 유지하면서 영역을 꽉 채우기 */
+    border-radius: 5px;
+}
+
+.portfolio-item p {
+    white-space: nowrap;        /* 줄바꿈 방지 */
+    overflow: hidden;           /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis;    /* '...'으로 표시 */
+    width: 300px;               /* 고정된 너비 설정 */
+}
+
+.countrys {
+	background: #ececec;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.countrys h2, .about h2, .contact h2 {
+	text-align: center;
+}
+
+.countrys-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.country {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 10px 20px;
+	width: calc(20% - 40px);
+	text-align: center;
+	transition: background 0.3s;
+}
+
+.country:hover {
+	background: #d6d6d6;
+}
+
+.about {
+    margin: 20px 0; /* 위아래 여백 추가 */
+    padding: 20px; /* 내부 여백 추가 */
+    text-align: center;
+}
+
+@media ( max-width : 768px) {
+	.portfolio-item {
+		width: calc(45% - 40px);
+	}
+	.country {
+		width: calc(45% - 40px);
+	}
+}
+
+@media ( max-width : 480px) {
+	.portfolio-item, .country {
+		width: 100%;
+	}
+}

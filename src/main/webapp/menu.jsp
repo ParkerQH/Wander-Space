@@ -49,16 +49,22 @@
 
                 <li>
                 	<%
-                        if (loggedInUser != null) {  // 로그인 상태
-                    %>
-                        <a href="mypage.jsp?language=${param.language}">My Page</a>
-                    <%
-                        } else {  // 로그인 안 된 상태
-                    %>
-                        <a href="login.jsp?language=${param.language}">My Page</a>
-                    <%
-                        }
-                    %>
+    				if (loggedInUser != null) {  // 로그인 상태
+        				if (loggedInUser.equals("admin")) {  // 관리자일 경우
+					%>
+            		<a href="adminpage.jsp?language=${param.language}">Admin Page</a>
+					<%
+        				} else {  // 일반 사용자일 경우
+					%>
+            		<a href="mypage.jsp?language=${param.language}">My Page</a>
+					<%
+        				}
+    				} else {  // 로그인 안 된 상태
+					%>
+        			<a href="login.jsp?language=${param.language}">My Page</a>
+					<%
+    				}
+					%>
                 </li>
             </ul>
             <button id="themeToggle">

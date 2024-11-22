@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS users (
 
 INSERT INTO users (u_name, u_email, u_phoneNumber, u_nickname, u_password) 
 VALUES 
-('박창률', 'admin1@admin.com', '010-1234-5678', 'parker', 'admin12!'),
-('박창률', 'admin2@admin.com', '010-1234-5678', 'parker', 'admin12!');
+('박창률', 'admin', '010-1234-5678', 'parker', '1234'),
+('박창률', 'parker@parker.com', '010-1234-5678', 'parker', 'parker12!'),
+('Qihuan', 'qihuan@qihuan.com', '010-1234-5678', 'qihuan', 'qihuan12!');
 
 SELECT * FROM users;		--입력 데이터 확인
 DELETE FROM users;			--입력 데이터 전체 삭제

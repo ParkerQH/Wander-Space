@@ -4,6 +4,8 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	background-color: #f9f9f9;
+	display: flex; /* Flexbox 활성화 */
+	flex-direction: column; /* 세로 방향으로 배치 */
 }
 
 body.dark-mode {
@@ -48,6 +50,17 @@ body.dark-mode .portfolio-item:hover {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 20px;
+}
+
+.float-left {
+    float: left;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.float-left:hover {
+    text-decoration: underline;
 }
 
 .portfolio, .countrys, .about, .contact {

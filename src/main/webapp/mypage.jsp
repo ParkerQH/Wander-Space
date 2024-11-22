@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
+    <title>Recently View Page</title>
     <link rel="stylesheet" href="resources/css/mypage.css">
     <script src="resources/js/mypage.js"></script>
 </head>
@@ -23,7 +23,7 @@
         <section class="countrys">
             <h2><fmt:message key="Places" /></h2>
             <div class="countrys-list">
-                <div class="country" onclick="filterTrips('All')">All</div>
+                <div class="country" onclick="filterTrips('All')"><fmt:message key="All"/></div>
                 <%
                 // Trip에서 국가 목록을 가져옴
                 PreparedStatement pstmt = null;
@@ -52,10 +52,10 @@
                 %>
             </div>
         </section>
-
+		
         <h2><fmt:message key="MyTrip" /></h2>
         <a href="addTrip.jsp?language=${param.language}"><button>+<fmt:message key="AddTrip" /></button></a>
-        
+        <a href="recentlyView.jsp"><button><fmt:message key="recentlyView" /></button></a>
         <!-- Portfolio Section -->
         <section class="portfolio">
             <%
@@ -76,8 +76,11 @@
                 <img src="resources/images/TravelReview/<%= mainPicture %>" alt="<%= title %>">
                 <h3><%= title %></h3>
                 <p><%= content %></p>
-                <a href="viewTrip.jsp?id=<%= tripId %>&language=${param.language}"><fmt:message key="More" /></a>
-            </div>
+                <div class="action-container">
+        			<a class="float-left" href="viewTrip.jsp?id=<%= tripId %>&language=${param.language}"><fmt:message key="More" /></a>
+        		</div>
+    			<div style="clear: both;"></div> <!-- float 초기화 -->
+			</div>
             <%
                 }
             } catch (SQLException e) {

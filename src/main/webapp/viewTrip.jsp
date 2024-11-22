@@ -30,49 +30,71 @@
 	rs = pstmt.executeQuery();
 
 	while (rs.next()) {
+		String email = rs.getString("t_email");
 		String countryName = rs.getString("t_country").replace(" ", "");
 		String countryIntro = countryName + "Intro";
 		String tripregion = rs.getString("t_region");
 		String title = rs.getString("t_title");
 		String mainpicture = rs.getString("t_mainpicture");
 		String content = rs.getString("t_content") != null ? rs.getString("t_content") : "";
-		String backgroundImage = (rs != null && rs.getString("t_country") != null
-		&& !rs.getString("t_country").isEmpty()) ? rs.getString("t_country") + ".jpg" : "homepage.jpg";
+		String backgroundImage = (rs != null && rs.getString("t_country") != null && !rs.getString("t_country").isEmpty()) ? rs.getString("t_country") + ".jpg" : "homepage.jpg";
 	%>
 	<section class="hero fade-in"
-		style="background-image: url('resources/images/Countries/<%=backgroundImage%>');">
+		style="background-image: url('resources/images/Countries/<%= backgroundImage %>');">
 		<h1>Welcome to <%=rs.getString("t_country")%></h1>
 	</section>
 
 	<section class="plans" id="plans" style="display: flex;">
 		<%--@include file="demo.jsp" --%>
 		<jsp:include page="weather.jsp">
-			<jsp:param name="country" value="<%=tripregion %>" />
+			<jsp:param name="country" value="<%=tripregion%>" />
 		</jsp:include>
 		<div class="card fade-in">
-			<h1><fmt:message key="<%=countryName %>" /></h1>
-			<h2>- <fmt:message key="<%=tripregion %>" />
-			</h2>
+			<h1><fmt:message key="<%=countryName%>" /></h1>
+			<h2>-<fmt:message key="<%=tripregion%>" /></h2>
 			<%
 			String country = rs.getString("t_country");
 			sql = "SELECT * FROM country WHERE country_name = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, country);
 			rs = pstmt.executeQuery();
-			
+
 			while (rs.next()) {
 			%>
-			<span class="fi fi-<%=rs.getString("country_id") %>"></span>
+			<span class="fi fi-<%=rs.getString("country_id")%>"></span>
 			<%
 			}
 			%>
-			<p><fmt:message key="<%=countryIntro %>" /></p>
+			<p>
+				<fmt:message key="<%=countryIntro%>" />
+			</p>
 		</div>
 	</section>
 
 	<section class="plans" id="plans">
 		<div class="card-alt fade-in">
-			<h2><%=title %></h2>
+			<%
+    		if (loggedInUser != null) {
+        			if (loggedInUser.equals("admin")) {
+			%>
+            <!-- Admin은 Delete 버튼만 보이게 -->
+            <div class="button-container">
+                <button onclick="deleteTrip('<%= tripId %>')">Delete</button>
+            </div>
+			<%
+        			} else if (loggedInUser.equals(email)) {  // 일반 사용자 본인일 경우
+			%>
+            <!-- 일반 사용자는 Update와 Delete 버튼 모두 보이게 -->
+            <div class="button-container">
+                <button onclick="location.href='updateTrip.jsp?id=<%= tripId %>'"><fmt:message key="Update"/></button>
+                <button onclick="deleteTrip('<%= tripId %>')"><fmt:message key="Delete"/></button>
+            </div>
+			<%
+        			}
+    		}
+			%>
+			
+			<h2><%=title%></h2>
 			<br>
 			<div class="photo-slider">
 				<div class="slider-container">
@@ -81,7 +103,8 @@
 					if (mainpicture != null && !mainpicture.isEmpty()) {
 					%>
 					<div class="slide">
-						<img src="resources/images/TravelReview/<%=mainpicture %>" alt="Main Trip Picture">
+						<img src="resources/images/TravelReview/<%=mainpicture%>"
+							alt="Main Trip Picture">
 					</div>
 					<%
 					}
@@ -94,7 +117,9 @@
 					while (rs.next()) {
 					%>
 					<div class="slide">
-						<img src="resources/images/TravelReview/<%=rs.getString("tp_picture")%>" alt="Trip Picture">
+						<img
+							src="resources/images/TravelReview/<%=rs.getString("tp_picture")%>"
+							alt="Trip Picture">
 					</div>
 					<%
 					}
@@ -103,17 +128,80 @@
 				<button class="slider-button prev" onclick="moveSlide(-1)">&#10094;</button>
 				<button class="slider-button next" onclick="moveSlide(1)">&#10095;</button>
 			</div>
-			<br>
-			<br>
-			<p><%=content %></p>
+			<br> <br>
+			<p><%=content%></p>
 		</div>
 	</section>
+
 	<%
+		// 쿠키 생성 조건: 이메일과 여행 ID가 모두 존재해야 함
+		if (loggedInUser != null && tripId != null && !loggedInUser.equals(email) && !loggedInUser.equals("admin")) {
+			String cookieValue = loggedInUser + ":" + tripId;
+
+			// 기존 쿠키 확인: 저장된 값이 같은 쿠키가 있는지 확인
+			boolean cookieExists = false;
+			Cookie[] cookies = request.getCookies();
+			if (cookies != null) {
+				System.out.println("Stored Cookies:");
+				for (Cookie cookie : cookies) {
+					System.out.println("Cookie Name: " + cookie.getName() + " | Cookie Value: " + cookie.getValue());
+				}
+			} else {
+				System.out.println("No cookies found.");
+			}
+
+			if (cookies != null) {
+				for (Cookie cookie : cookies) {
+					if (cookieValue.equals(cookie.getValue())) {
+						cookieExists = true;
+						break;
+					}
+				}
+			}
+
+			// 동일한 값의 쿠키가 없다면 새로운 쿠키 생성
+			if (!cookieExists) {
+			// 쿠키 이름을 숫자로 자동 증가시키기 위한 변수
+				String cookieBaseName = "recentTrip";
+				int cookieIndex = 1; // 숫자 인덱스 시작 값
+
+				// 기존 쿠키 확인: 쿠키 이름에 숫자 부분이 있는지 확인
+				if (cookies != null) {
+					for (Cookie cookie : cookies) {
+						try {
+							if (cookie.getName().startsWith(cookieBaseName)) {
+								int currentIndex = Integer.parseInt(cookie.getName().substring(cookieBaseName.length()));
+								cookieIndex = Math.max(cookieIndex, currentIndex + 1); // 더 큰 숫자로 증가
+							}
+						} catch (NumberFormatException e) {
+							// 숫자가 아닐 경우 넘어감
+						}
+					}
+				}
+		
+				// 새로운 쿠키 이름 생성
+				String cookieName = cookieBaseName + cookieIndex;
+
+				// 쿠키 생성
+				Cookie newCookie = new Cookie(cookieName, cookieValue);
+				newCookie.setPath("/"); // 애플리케이션 전체에서 사용 가능
+				newCookie.setMaxAge(7 * 24 * 60 * 60); // 7일 동안 유효
+
+				// 쿠키 추가
+				response.addCookie(newCookie);
+				System.out.println("New Cookie Created: " + cookieName + " = " + cookieValue);
+			} else {
+				System.out.println("Cookie already exists with the value: " + cookieValue);
+			}
+		} else {
+			System.out.println("Cannot create cookie: Missing email or trip ID.");
+		}
 	}
+
 	if (rs != null)
-		rs.close();
+	rs.close();
 	if (pstmt != null)
-		pstmt.close();
+	pstmt.close();
 	%>
 
 	<%@include file="footer.jsp"%>

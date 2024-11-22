@@ -40,7 +40,7 @@
             <div class="login__box">
                 <i class="ri-user-3-line login__icon"></i>
                 <div class="login__box-input">
-                    <input type="email" name="email" required class="login__input" id="login-email" placeholder=" " />
+                    <input type="text" name="email" required class="login__input" id="login-email" placeholder=" " />
                     <label for="login-email" class="login__label"><fmt:message key="Email" /></label>
                 </div>
             </div>
@@ -66,7 +66,7 @@
 
         <%
 		    // 세션 유효 시간을 3분(180초)으로 설정
-        	session.setMaxInactiveInterval(3*60);
+        	session.setMaxInactiveInterval(30*60);
             // 폼 제출 후 로그인 검증 수행
             String email = request.getParameter("email");
             String password = request.getParameter("password");
