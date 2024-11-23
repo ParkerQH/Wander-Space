@@ -2,8 +2,8 @@ USE WanderSpaceDB;
 
 CREATE TABLE IF NOT EXISTS country (
     country_id VARCHAR(3) NOT NULL,      -- 나라 코드 (ISO 3166-1 alpha-3)
-    country_name VARCHAR(50) NOT NULL,   -- 나라 이름
-    capital VARCHAR(50),                 -- 수도
+    country_name VARCHAR(50) NOT NULL UNIQUE,   -- 나라 이름
+    capital VARCHAR(50) NOT NULL,                 -- 수도
     PRIMARY KEY (country_id)             -- 나라 코드를 기본키로 설정
 ) DEFAULT CHARSET=utf8;
 
@@ -39,6 +39,6 @@ VALUES
     ('id', 'Indonesia', 'Jakarta'),
     ('my', 'Malaysia', 'Kuala Lumpur');
 
-SELECT * FROM country;		--입력 데이터 전체 조회
-DELETE FROM country;		--입력 데이터 전체 삭제
-DROP TABLE country;			--테이블 삭제
+--SELECT * FROM country;		--입력 데이터 전체 조회
+--DELETE FROM country;		--입력 데이터 전체 삭제
+--DROP TABLE country;			--테이블 삭제

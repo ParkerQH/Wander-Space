@@ -72,10 +72,10 @@ SELECT LAST_INSERT_ID();
 INSERT INTO trip_pictures (tp_trip_id, tp_picture)
 VALUES (LAST_INSERT_ID(), 'Asakusa1.jpg');
        
-SELECT * FROM trip;			--입력 데이터 전체 조회
-DELETE FROM trip;			--입력 데이터 전체 삭제
-DROP TABLE trip;			--테이블 삭제
+--SELECT * FROM trip;			--입력 데이터 전체 조회
+--DELETE FROM trip;			--입력 데이터 전체 삭제
+--DROP TABLE trip;			--테이블 삭제
 
-SELECT * FROM trip_pictures;		--입력 데이터 전체 조회
-DELETE FROM trip_pictures;			--입력 데이터 전체 삭제
-DROP TABLE trip_pictures;			--테이블 삭제
+--SELECT * FROM trip_pictures;		--입력 데이터 전체 조회
+--DELETE FROM trip_pictures;			--입력 데이터 전체 삭제
+--DROP TABLE trip_pictures;			--테이블 삭제

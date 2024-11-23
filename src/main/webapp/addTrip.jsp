@@ -26,12 +26,7 @@
 		<!-- Skills Section -->
 		<section class="mytrip">
 			<h2><fmt:message key="MyTrip" /></h2>
-			<form action="addTripAction.jsp" method="post"
-				enctype="multipart/form-data">
-				<div class="form-group">
-					<label for="title"><fmt:message key="Email" />:</label> <input
-						type="text" name="email" id="email">
-				</div>
+			<form action="addTripAction.jsp" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="country"><fmt:message key="Country" />:</label> <select
 						id="country" name="country" onchange="updateRegions()">

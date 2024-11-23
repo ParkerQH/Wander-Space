@@ -55,7 +55,7 @@
 		
         <h2><fmt:message key="MyTrip" /></h2>
         <a href="addTrip.jsp?language=${param.language}"><button>+<fmt:message key="AddTrip" /></button></a>
-        <a href="recentlyView.jsp"><button><fmt:message key="recentlyView" /></button></a>
+        <a href="recentlyView.jsp?language=${param.language}"><button><fmt:message key="recentlyView" /></button></a>
         <!-- Portfolio Section -->
         <section class="portfolio">
             <%

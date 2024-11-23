@@ -18,7 +18,7 @@
     MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
 
     // 폼 데이터 수집
-    String email = multi.getParameter("email");
+    String email = (String) session.getAttribute("loggedInUser");
     String country = multi.getParameter("country");
     String region = multi.getParameter("region");
     String title = multi.getParameter("title");

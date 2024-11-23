@@ -37,29 +37,24 @@ function updateRegions(selectedLanguage) {
     const regionSelect = document.getElementById("region");
     const selectedCountry = countrySelect.value;
 
-    console.log("Selected Country:", selectedCountry);  // 선택된 나라 확인
-
     // 기존 옵션 초기화
-    regionSelect.innerHTML = "<option value=''>Select a region</option>"; // 기본 옵션 추가
+    regionSelect.innerHTML = "<option value=''>Select a region</option>";
 
-    // 언어에 맞는 지역 리스트 가져오기
-    const regions = regionsByCountry[selectedCountry] ? regionsByCountry[selectedCountry][selectedLanguage] : null;
+    if (regionsByCountry[selectedCountry]) {
+        const englishRegions = regionsByCountry[selectedCountry].en;
+        const translatedRegions = regionsByCountry[selectedCountry][selectedLanguage] || englishRegions;
 
-    // 선택된 국가에 맞는 지역 옵션 추가
-    if (regions) {
-        regions.forEach(region => {
+        // 지역들 추가
+        englishRegions.forEach((region, index) => {
             const option = document.createElement("option");
-            option.value = region;
-            option.textContent = region;
+            option.value = region; // 영어로 된 값 설정
+            option.textContent = translatedRegions[index]; // 번역된 텍스트 표시
             regionSelect.appendChild(option);
         });
-    } else {
-        const option = document.createElement("option");
-        option.value = "";
-        option.textContent = "No regions available";
-        regionSelect.appendChild(option);
     }
 }
+
+
 
 const regionsByCountry = {
 	Korea: {

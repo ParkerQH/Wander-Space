@@ -63,22 +63,24 @@
     }
 
     // 삭제된 사진 처리
-    String deletePicture = multi.getParameter("deletePicture");
-    if (deletePicture != null) {
-        // 사진 삭제
-        sql = "DELETE FROM trip_pictures WHERE tp_picture = ? AND tp_trip_id = ?";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, deletePicture);
-        pstmt.setString(2, tripId);
-        pstmt.executeUpdate();
+    String[] deletePictures = multi.getParameterValues("deletePicture");
+	if (deletePictures != null) {
+    	for (String deletePicture : deletePictures) {
+        	// trip_pictures 테이블에서 해당 사진 삭제
+        	sql = "DELETE FROM trip_pictures WHERE tp_picture = ? AND tp_trip_id = ?";
+        	pstmt = conn.prepareStatement(sql);
+        	pstmt.setString(1, deletePicture);
+        	pstmt.setString(2, tripId);
+        	pstmt.executeUpdate();
 
-        // 실제 파일 삭제
-        String imagePath = getServletContext().getRealPath("/") + "resources/images/TravelReview/" + deletePicture;
-        File file = new File(imagePath);
-        if (file.exists()) {
-            file.delete();
-        }
-    }
+        	// 실제 파일 삭제
+        	String imagePath = getServletContext().getRealPath("/") + "resources/images/TravelReview/" + deletePicture;
+        	File file = new File(imagePath);
+        	if (file.exists()) {
+            	file.delete();
+        	}
+    	}
+	}
 
     // 여행 정보 업데이트 후, 상세 페이지로 리다이렉션
     response.sendRedirect("viewTrip.jsp?id=" + tripId);
