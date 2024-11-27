@@ -12,8 +12,10 @@
 ## 💻개발기간
 2024/10/28 ~ 2024/11/22
 
-## 🖥Preview
+## 🔍실행방법
 
+
+## 🖥Preview
 - 홈페이지
 ![image](https://github.com/user-attachments/assets/133f9fa3-9e18-4cd6-aae4-5d06aae43d84)
 
