@@ -21,6 +21,10 @@
 ![image](https://github.com/user-attachments/assets/1ed9e08e-c6c0-4779-9c00-002f4b2f41f9)
 ![image](https://github.com/user-attachments/assets/7fc49c7c-bdd1-4d17-baac-5ec8b1af54b6)
 
+- 여행 후기 페이지
+![image](https://github.com/user-attachments/assets/3c4b8daf-4b0a-4bd9-ab8c-014c3869842c)
+![image](https://github.com/user-attachments/assets/8ffe1be2-fbc2-4b38-bef7-13b6e8e0641a)
+
 - 로그인
 ![image](https://github.com/user-attachments/assets/3f93e456-ce44-489c-8b51-50340190b53a)
 
