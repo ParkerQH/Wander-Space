@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="java.io.File" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
@@ -37,12 +38,16 @@
 		String title = rs.getString("t_title");
 		String mainpicture = rs.getString("t_mainpicture");
 		String content = rs.getString("t_content") != null ? rs.getString("t_content") : "";
-		String backgroundImage = (rs != null && rs.getString("t_country") != null && !rs.getString("t_country").isEmpty()) ? rs.getString("t_country") + ".jpg" : "homepage.jpg";
+		// 이미지 경로 설정
+	    String imagePath = application.getRealPath("/resources/images/Countries/") + countryName + ".jpg";
+	    File imageFile = new File(imagePath);
+
+	    // 파일이 존재하면 해당 파일 이름 사용, 존재하지 않으면 기본 이미지 사용
+	    String backgroundImage = imageFile.exists() ? countryName + ".jpg" : "homepage.jpg";
 	%>
-	<section class="hero fade-in"
-		style="background-image: url('resources/images/Countries/<%= backgroundImage %>');">
-		<h1>Welcome to <%=rs.getString("t_country")%></h1>
-	</section>
+	    <section class="hero fade-in" style="background-image: url('resources/images/Countries/<%= backgroundImage %>');">
+	        <h1>Welcome to <%= countryName %></h1>
+	    </section>
 
 	<section class="plans" id="plans" style="display: flex;">
 		<%--@include file="demo.jsp" --%>
