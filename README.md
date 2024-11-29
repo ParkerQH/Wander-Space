@@ -13,11 +13,13 @@
 2024/10/28 ~ 2024/11/22
 
 ## 🔍실행방법
-1. MySQL에서 WanderSapceDB와 같이 **DATABASE를 생성**합니다.
-2. **dbconn.jsp** 부분의 MySQL ID/Password(ex. root/1234) 부분 및 DB경로를 알맞게 수정합니다.
-3. webapp/resources/sql에서 **user.sql->country.sql->trip.sql** 순으로 테이블 생성 및 요소값을 입력합니다.
-4. 사진 데이터의 경우 기본 사진을 제외한 나머지 부분은 **Sever**(절대경로가 아닌 상대경로)에서 돌아가게 됩니다. 따라서 home.jsp에 진입했을 때 사진 이미지가 안 잡힌다면 tomcat 서버가 작동 중일 때 resources/images 파일을 제거 후 다시 삽입해주시길 바랍니다. 혹은 C:\Users\username\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\WanderSpace\resources 에 images 파일을 삽입해주시면 정상 작동 됩니다.
-5. 모든 세팅이 끝나면 home.jsp에 진입하여 진행하시면 됩니다.
+1. Eclipse IDE에서 **Dynamic Web project** 생성
+2. **Tomcat** 설치면 연결
+3. MySQL에서 WanderSapceDB와 같이 **DATABASE를 생성**합니다.
+4. **dbconn.jsp** 부분의 MySQL ID/Password(ex. root/1234) 부분 및 DB경로를 알맞게 수정합니다.
+5. webapp/resources/sql에서 **user.sql->country.sql->trip.sql** 순으로 테이블 생성 및 요소값을 입력합니다.
+6. 사진 데이터의 경우 기본 사진을 제외한 나머지 부분은 **Sever**(절대경로가 아닌 상대경로)에서 돌아가게 됩니다. 따라서 home.jsp에 진입했을 때 사진 이미지가 안 잡힌다면 tomcat 서버가 작동 중일 때 resources/images 파일을 제거 후 다시 삽입해주시길 바랍니다. 혹은 C:\Users\username\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\WanderSpace\resources 에 images 파일을 삽입해주시면 정상 작동 됩니다.
+7. 모든 세팅이 끝나면 home.jsp에 진입하여 진행하시면 됩니다.
 
 ## 🖥Preview
 - 홈페이지
