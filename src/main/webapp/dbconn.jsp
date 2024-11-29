@@ -6,7 +6,7 @@ Connection conn = null;
 try {
 	String url = "jdbc:mysql://localhost:3306/WanderSpaceDB";
 	String user = "root";
-	String password = "parker0112!";
+	String password = "1234";
 
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(url, user, password);
