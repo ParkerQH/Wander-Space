@@ -13,7 +13,7 @@
 
 ## 🔍실행방법
 1. Eclipse IDE에서 **Dynamic Web project** 생성
-2. **Tomcat** 설치면 연결
+2. **Tomcat** 설치 및 연결
 3. MySQL에서 WanderSapceDB와 같이 **DATABASE를 생성**합니다.
 4. **dbconn.jsp** 부분의 MySQL ID/Password(ex. root/1234) 부분 및 DB경로를 알맞게 수정합니다.
 5. webapp/resources/sql에서 **user.sql->country.sql->trip.sql** 순으로 테이블 생성 및 요소값을 입력합니다.
