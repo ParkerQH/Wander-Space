@@ -25,30 +25,29 @@
 <img src="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
 
 - 모든 국가를 볼 수 있는 페이지
-<img src="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
+<img src="https://github.com/user-attachments/assets/60f9d780-9418-46d6-bca6-89090dee9275" width=95%> <br>
 
 - 국가 별 작성된 모든 여행 후기를 볼 수 있는 페이지(국가별 수도 기준으로 날씨 제공)
-<img src="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
-<img src="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
+<img src="https://github.com/user-attachments/assets/9c6f4e73-c58b-4ac4-99e6-c642215babb0" width=95%> <br>
+<img src="https://github.com/user-attachments/assets/898274db-4491-4dae-b4d7-b224fbbe7637" width=95%> <br>
 
 - 여행 후기 페이지(여행 후기 장소에 따라 날씨로 출력되는 장소도 업데이트)
-![image](https://github.com/user-attachments/assets/3c4b8daf-4b0a-4bd9-ab8c-014c3869842c)
-![image](https://github.com/user-attachments/assets/8ffe1be2-fbc2-4b38-bef7-13b6e8e0641a)
+<img src="https://github.com/user-attachments/assets/68825cee-ea3d-46b2-a9c2-d5827399cc4b" width=95%> <br>
+<img src="https://github.com/user-attachments/assets/cc27793e-ea59-48ae-bc74-77952352d6ea" width=95%> <br>
 
 - 로그인
-![image](https://github.com/user-attachments/assets/3f93e456-ce44-489c-8b51-50340190b53a)
+<img src="https://github.com/user-attachments/assets/a4ad2ca9-b1d1-4c51-a55d-732708ba6608" width=95%> <br>
 
 - 회원가입
-![image](https://github.com/user-attachments/assets/6969242d-7e5b-43da-bb29-79f06ef4be5e)
+<img src="https://github.com/user-attachments/assets/69209abe-0071-49e2-990a-429131038cc6" width=95%> <br>
 
 - 마이페이지
-![image](https://github.com/user-attachments/assets/7faa8efc-466f-4b40-963b-6ad00276eb0a)
-
+<img src="https://github.com/user-attachments/assets/189b8067-f0f6-4cc3-8d1e-f69d1743588a" width=95%> <br>
 - 여행 후기 작성 페이지
-![image](https://github.com/user-attachments/assets/125e35f9-0351-42cb-96d8-0ba83bfc8691)
+<img src="https://github.com/user-attachments/assets/30152c9a-9e8c-44f8-a227-c4fef8048804" width=95%> <br>
 
 - 최근 7일간 본 여행 후기 페이지
-![image](https://github.com/user-attachments/assets/fb86e4a2-59d3-408d-a537-1eb7f8aaca47)
+<img src="https://github.com/user-attachments/assets/08627afb-21f7-4af9-9f73-c363de220794" width=95%> <br>
 
 - 여행 후기 수정 페이지
-![image](https://github.com/user-attachments/assets/541af14c-6652-4672-9907-c977d6ad84b3)
+<img src="https://github.com/user-attachments/assets/7e72b160-8311-4b8d-8147-afc4def6607e" width=95%> <br>
