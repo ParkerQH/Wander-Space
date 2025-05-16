@@ -22,14 +22,14 @@
 
 ## 🖥Preview
 - 홈페이지
-<img srv="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
+<img src="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
 
 - 모든 국가를 볼 수 있는 페이지
-![image](https://github.com/user-attachments/assets/1b270d6a-878f-4559-a251-8140edd9aa69)
+<img src="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
 
 - 국가 별 작성된 모든 여행 후기를 볼 수 있는 페이지(국가별 수도 기준으로 날씨 제공)
-![image](https://github.com/user-attachments/assets/1ed9e08e-c6c0-4779-9c00-002f4b2f41f9)
-![image](https://github.com/user-attachments/assets/7fc49c7c-bdd1-4d17-baac-5ec8b1af54b6)
+<img src="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
+<img src="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
 
 - 여행 후기 페이지(여행 후기 장소에 따라 날씨로 출력되는 장소도 업데이트)
 ![image](https://github.com/user-attachments/assets/3c4b8daf-4b0a-4bd9-ab8c-014c3869842c)
