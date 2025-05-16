@@ -22,7 +22,7 @@
 
 ## 🖥Preview
 - 홈페이지
-![image](https://github.com/user-attachments/assets/133f9fa3-9e18-4cd6-aae4-5d06aae43d84)
+<img srv="https://github.com/user-attachments/assets/ce4421bb-45a9-442f-9978-68a5eca1ad4b" width=95%> <br>
 
 - 모든 국가를 볼 수 있는 페이지
 ![image](https://github.com/user-attachments/assets/1b270d6a-878f-4559-a251-8140edd9aa69)
